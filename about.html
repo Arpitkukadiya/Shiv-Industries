@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>About Us | Shiv Industries - Premium Cattle Feed</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', 'Inter', sans-serif;
+      background: radial-gradient(circle at 10% 30%, rgba(250,245,225,0.4) 0%, #fef7e0 100%);
+      color: #1e2f1c;
+      overflow-x: hidden;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #e9f5e9; }
+    ::-webkit-scrollbar-thumb { background: #2e7d32; border-radius: 10px; }
+
+    /* Navbar - Fully Responsive */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 245, 0.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      padding: clamp(0.8rem, 3vw, 1rem) clamp(1rem, 4vw, 2rem);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: clamp(1.2rem, 5vw, 1.9rem);
+      font-weight: 800;
+      background: linear-gradient(130deg, #1e5a1e, #f5b81b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .logo span {
+      font-size: clamp(0.55rem, 3vw, 0.75rem);
+      font-weight: 500;
+      color: #5a6b4a;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: clamp(1rem, 3vw, 2rem);
+      list-style: none;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #2c3a2b;
+      transition: 0.3s;
+      position: relative;
+      font-size: clamp(0.85rem, 3vw, 1rem);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2.5px;
+      background: linear-gradient(90deg, #f5b81b, #2e7d32);
+      transition: 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #f5b81b;
+    }
+
+    .language-selector {
+      display: flex;
+      gap: 0.5rem;
+      background: rgba(46, 125, 50, 0.1);
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0.3rem 0.7rem;
+      border-radius: 30px;
+      transition: 0.3s;
+      font-size: clamp(0.7rem, 2.5vw, 0.85rem);
+      font-family: inherit;
+    }
+
+    .lang-btn.active {
+      background: #2e7d32;
+      color: white;
+    }
+
+    .lang-btn:hover:not(.active) {
+      background: #f5b81b;
+      color: #1e3a1e;
+    }
+
+    .menu-icon { display: none; font-size: 1.8rem; cursor: pointer; color: #2e7d32; }
+
+    /* About Hero Section */
+    .about-hero {
+      background: linear-gradient(135deg, #1e3a1e, #2e7d32);
+      padding: clamp(2rem, 8vw, 4rem) clamp(1rem, 5vw, 2rem);
+      text-align: center;
+      color: white;
+    }
+
+    .about-hero-content h1 {
+      font-size: clamp(1.8rem, 6vw, 2.8rem);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .about-hero-content p {
+      font-size: clamp(1rem, 4vw, 1.2rem);
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+
+    /* Sections */
+    .section {
+      padding: clamp(2rem, 8vw, 5rem) clamp(1rem, 5vw, 2rem);
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.6rem, 6vw, 2.6rem);
+      font-weight: 700;
+      margin-bottom: clamp(2rem, 5vw, 3rem);
+      background: linear-gradient(120deg, #2b6e2b, #e0a800);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      padding: 0 1rem;
+    }
+
+    .bg-light {
+      background: rgba(255, 251, 235, 0.6);
+      border-radius: 2rem;
+      margin: 2rem auto;
+    }
+
+    /* About Grid */
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: clamp(1.5rem, 4vw, 2rem);
+    }
+
+    .about-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: clamp(1.5rem, 4vw, 2rem);
+      transition: all 0.3s ease;
+      border-left: 5px solid #f5b81b;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .about-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+    }
+
+    .about-card i {
+      font-size: clamp(1.8rem, 5vw, 2rem);
+      color: #f5b81b;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .about-card h3 {
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+      margin-bottom: 1rem;
+      color: #1e3a1e;
+    }
+
+    .about-card p {
+      font-size: clamp(0.85rem, 3vw, 0.95rem);
+      line-height: 1.6;
+      color: #555;
+    }
+
+    /* Values Grid */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: clamp(1.5rem, 4vw, 2rem);
+    }
+
+    .value-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: clamp(1.5rem, 4vw, 2rem);
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .value-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .value-card i {
+      font-size: clamp(2rem, 6vw, 2.5rem);
+      color: #f5b81b;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .value-card h3 {
+      font-size: clamp(1.1rem, 4vw, 1.3rem);
+      margin-bottom: 0.8rem;
+      color: #1e3a1e;
+    }
+
+    .value-card p {
+      font-size: clamp(0.85rem, 3vw, 0.9rem);
+      line-height: 1.5;
+      color: #666;
+    }
+
+    /* Partners/Leadership Grid */
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: clamp(1.5rem, 4vw, 2rem);
+    }
+
+    .partner-card {
+      background: white;
+      border-radius: 2rem;
+      padding: clamp(1.5rem, 4vw, 2rem);
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+    }
+
+    .partner-card:hover {
+      transform: translateY(-8px);
+      background: #fffbf0;
+      box-shadow: 0 20px 35px rgba(245,184,27,0.15);
+    }
+
+    .partner-img {
+      width: clamp(100px, 20vw, 130px);
+      height: clamp(100px, 20vw, 130px);
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #f5b81b;
+      transition: transform 0.3s ease;
+    }
+
+    .partner-card:hover .partner-img {
+      transform: scale(1.05);
+    }
+
+    .partner-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .partner-card h3 {
+      font-size: clamp(1.2rem, 4vw, 1.4rem);
+      margin: 0.8rem 0 0.5rem;
+      color: #1e3a1e;
+    }
+
+    .role {
+      color: #f5b81b;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      font-size: clamp(0.85rem, 3vw, 0.95rem);
+    }
+
+    .partner-card p {
+      font-size: clamp(0.85rem, 3vw, 0.9rem);
+      line-height: 1.5;
+      color: #555;
+    }
+
+    /* Stats Section */
+    .stats-section {
+      background: linear-gradient(120deg, #1f4f1a, #2e7d32);
+      padding: clamp(2rem, 6vw, 3rem);
+      margin: 2rem auto;
+      max-width: 1300px;
+      width: calc(100% - 2rem);
+      border-radius: clamp(1.5rem, 5vw, 2rem);
+    }
+
+    .stats-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: clamp(1.5rem, 4vw, 2rem);
+      text-align: center;
+      color: white;
+    }
+
+    .stat-item {
+      flex: 1;
+      min-width: 120px;
+    }
+
+    .stat-number {
+      font-size: clamp(1.8rem, 6vw, 2.8rem);
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-item p {
+      font-size: clamp(0.85rem, 3vw, 1rem);
+      opacity: 0.9;
+    }
+
+    /* Footer */
+    footer {
+      background: #0e2a0b;
+      color: #eeddbb;
+      text-align: center;
+      padding: clamp(1.5rem, 5vw, 2rem);
+      margin-top: 2rem;
+    }
+
+    .social-icons i {
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+      margin: 0 10px;
+      color: #f5b81b;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+
+    .social-icons i:hover {
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* ========== MEDIA QUERIES ========== */
+
+    /* Tablet Landscape (768px - 991px) */
+    @media (min-width: 768px) and (max-width: 991px) {
+      .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      
+      .nav-links {
+        display: flex !important;
+        gap: 1.5rem;
+      }
+      
+      .menu-icon {
+        display: none !important;
+      }
+      
+      .about-grid,
+      .values-grid,
+      .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Tablet Portrait (576px - 767px) */
+    @media (min-width: 576px) and (max-width: 767px) {
+      .navbar {
+        flex-direction: column;
+        padding: 1rem;
+      }
+      
+      .logo {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .menu-icon {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: white;
+        padding: 1rem;
+        text-align: center;
+        margin-top: 1rem;
+        border-radius: 2rem;
+        gap: 1rem;
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .about-grid,
+      .values-grid,
+      .partners-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .stats-container {
+        gap: 1.5rem;
+      }
+    }
+
+    /* Mobile Landscape (480px - 575px) */
+    @media (min-width: 480px) and (max-width: 575px) {
+      .navbar {
+        flex-direction: column;
+        padding: 0.8rem;
+      }
+      
+      .logo {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .logo h1 {
+        font-size: 1.3rem;
+      }
+      
+      .menu-icon {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: white;
+        padding: 1rem;
+        text-align: center;
+        margin-top: 1rem;
+        border-radius: 2rem;
+        gap: 0.8rem;
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .about-grid,
+      .values-grid,
+      .partners-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .about-hero-content h1 {
+        font-size: 1.8rem;
+      }
+      
+      .about-hero-content p {
+        font-size: 1rem;
+      }
+      
+      .stats-container {
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+      
+      .stat-item {
+        min-width: auto;
+      }
+    }
+
+    /* Mobile Portrait (320px - 479px) */
+    @media (max-width: 479px) {
+      .navbar {
+        flex-direction: column;
+        padding: 0.8rem;
+      }
+      
+      .logo {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .logo h1 {
+        font-size: 1.1rem;
+      }
+      
+      .logo span {
+        font-size: 0.55rem;
+      }
+      
+      .menu-icon {
+        display: block;
+        font-size: 1.5rem;
+      }
+      
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: white;
+        padding: 0.8rem;
+        text-align: center;
+        margin-top: 0.8rem;
+        border-radius: 1.5rem;
+        gap: 0.8rem;
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .nav-links a {
+        font-size: 0.85rem;
+      }
+      
+      .language-selector {
+        justify-content: center;
+      }
+      
+      .lang-btn {
+        padding: 0.2rem 0.5rem;
+        font-size: 0.7rem;
+      }
+      
+      .about-hero {
+        padding: 1.5rem 1rem;
+      }
+      
+      .about-hero-content h1 {
+        font-size: 1.5rem;
+      }
+      
+      .about-hero-content p {
+        font-size: 0.9rem;
+      }
+      
+      .section {
+        padding: 1.5rem 1rem;
+      }
+      
+      .section-title {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .about-grid,
+      .values-grid,
+      .partners-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      .about-card,
+      .value-card,
+      .partner-card {
+        padding: 1.2rem;
+      }
+      
+      .about-card h3,
+      .value-card h3,
+      .partner-card h3 {
+        font-size: 1.1rem;
+      }
+      
+      .about-card p,
+      .value-card p,
+      .partner-card p {
+        font-size: 0.85rem;
+      }
+      
+      .partner-img {
+        width: 90px;
+        height: 90px;
+      }
+      
+      .stats-section {
+        padding: 1.5rem;
+        margin: 1rem auto;
+      }
+      
+      .stats-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .stat-number {
+        font-size: 1.8rem;
+      }
+      
+      .stat-item p {
+        font-size: 0.8rem;
+      }
+      
+      footer {
+        padding: 1.2rem;
+      }
+      
+      footer p {
+        font-size: 0.7rem;
+      }
+      
+      .social-icons i {
+        font-size: 1rem;
+        margin: 0 8px;
+      }
+    }
+
+    /* Extra Small Devices (below 320px) */
+    @media (max-width: 320px) {
+      .about-hero-content h1 {
+        font-size: 1.3rem;
+      }
+      
+      .section-title {
+        font-size: 1.2rem;
+      }
+      
+      .stat-number {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Landscape Mode for Mobile */
+    @media (max-width: 768px) and (orientation: landscape) {
+      .about-grid,
+      .values-grid,
+      .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .navbar {
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .about-card, .value-card, .partner-card {
+      animation: fadeInUp 0.5s ease-out forwards;
+    }
+
+    .about-card:nth-child(1) { animation-delay: 0.1s; }
+    .about-card:nth-child(2) { animation-delay: 0.2s; }
+    .about-card:nth-child(3) { animation-delay: 0.3s; }
+
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Focus States */
+    a:focus, button:focus {
+      outline: 2px solid #f5b81b;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<nav class="navbar">
+  <div class="logo">
+    <h1>SHIV INDUSTRIES</h1>
+    <span>✨ Premium Dairy Nutrition | Amreli, Gujarat</span>
+  </div>
+  <div class="menu-icon" id="menuToggle"><i class="fas fa-bars"></i></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li>
+      <div class="language-selector">
+        <button class="lang-btn" data-lang="gu">ગુજરાતી</button>
+        <button class="lang-btn" data-lang="hi">हिंदी</button>
+        <button class="lang-btn active" data-lang="en">English</button>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<!-- About Hero -->
+<section class="about-hero">
+  <div class="about-hero-content">
+    <h1 data-key="aboutHeroTitle">Fueling India's Dairy Prosperity</h1>
+    <p data-key="aboutHeroText">Since 2012, Shiv Industries has been the trusted partner for thousands of dairy farmers across Gujarat.</p>
+  </div>
+</section>
+
+<!-- Main About Content -->
+<section class="section">
+  <h2 class="section-title" data-key="aboutMainTitle">🌾 Who We Are</h2>
+  <div class="about-grid">
+    <div class="about-card">
+      <i class="fas fa-bullhorn"></i>
+      <h3 data-key="storyTitle">Our Story</h3>
+      <p data-key="storyText">Shiv Industries is a trusted name in Amreli, Gujarat, dedicated to manufacturing scientifically formulated cattle feed. We blend traditional knowledge with modern nutrition to empower dairy farmers. Our journey began with a simple mission: to provide high-quality, affordable cattle feed that maximizes milk yield and ensures animal health.</p>
+    </div>
+    <div class="about-card">
+      <i class="fas fa-eye"></i>
+      <h3 data-key="visionTitle">Our Vision</h3>
+      <p data-key="visionText">To be India's most reliable cattle feed brand, driving dairy prosperity through high-quality nutrition and farmer-first innovation. We envision a future where every dairy farmer in India has access to premium nutrition that transforms their livelihood.</p>
+    </div>
+    <div class="about-card">
+      <i class="fas fa-rocket"></i>
+      <h3 data-key="missionTitle">Our Mission</h3>
+      <p data-key="missionText">Customer satisfaction, uncompromised quality, and continuous R&D — ensuring every bag of feed boosts milk yield and animal health. We are committed to sustainable practices and empowering the farming community.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Values Section -->
+<section class="section bg-light">
+  <h2 class="section-title" data-key="valuesTitle">💎 Our Core Values</h2>
+  <div class="values-grid">
+    <div class="value-card">
+      <i class="fas fa-leaf"></i>
+      <h3 data-key="value1Title">Quality First</h3>
+      <p data-key="value1Desc">We use only the finest raw materials and rigorous testing to ensure every batch meets the highest nutritional standards.</p>
+    </div>
+    <div class="value-card">
+      <i class="fas fa-handshake"></i>
+      <h3 data-key="value2Title">Farmer Partnership</h3>
+      <p data-key="value2Desc">We work closely with dairy farmers to understand their needs and provide tailored nutritional solutions.</p>
+    </div>
+    <div class="value-card">
+      <i class="fas fa-flask"></i>
+      <h3 data-key="value3Title">Innovation</h3>
+      <p data-key="value3Desc">Continuous research and development to bring the latest advancements in animal nutrition to our farmers.</p>
+    </div>
+    <div class="value-card">
+      <i class="fas fa-heart"></i>
+      <h3 data-key="value4Title">Animal Welfare</h3>
+      <p data-key="value4Desc">Our formulations are designed to promote optimal animal health, longevity, and well-being.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Leadership Team -->
+<section class="section">
+  <h2 class="section-title" data-key="leadershipTitle">🤝 Our Leadership Team</h2>
+  <div class="partners-grid">
+    <div class="partner-card">
+      <div class="partner-img"><img src="maheshbhai.jpeg" alt="Maheshbhai Kukadiya"></div>
+      <h3>Maheshbhai Kukadiya</h3>
+      <div class="role" data-key="role1">Customer Relations & Business Growth</div>
+      <p data-key="desc1">Expert in handling customers and maintaining strong relationships. Trusted by 500+ dairy farmers across Saurashtra. With over 15 years of experience, he ensures every farmer receives personalized attention and support.</p>
+    </div>
+    <div class="partner-card">
+      <div class="partner-img"><img src="ajaybhai.jpeg" alt="Ajaybhai Kukadiya"></div>
+      <h3>Ajaybhai Kukadiya</h3>
+      <div class="role" data-key="role2">Quality Control & Production</div>
+      <p data-key="desc2">Ensures raw material quality (cotton seeds, grains) and final feed consistency. Rigorous testing for optimal nutrition. His expertise guarantees that every bag meets our premium quality standards.</p>
+    </div>
+    <div class="partner-card">
+      <div class="partner-img"><img src="kuldipbhai.jpeg" alt="Kuldipbhai Kukadiya"></div>
+      <h3>Kuldipbhai Kukadiya</h3>
+      <div class="role" data-key="role3">Finance & E-Business Operations</div>
+      <p data-key="desc3">Handles billing, banking, online operations, and digital business. Modernizing supply chain for seamless delivery and bringing transparency to all business operations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<div class="stats-section">
+  <div class="stats-container">
+    <div class="stat-item">
+      <div class="stat-number">872+</div>
+      <p data-key="statFarmers">Happy Farmers</p>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">14+</div>
+      <p data-key="statYears">Years of Excellence</p>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">3,850+</div>
+      <p data-key="statTonnes">Tonnes Supplied</p>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">4</div>
+      <p data-key="statProducts">Premium Products</p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p data-key="footerText">© 2026 Shiv Industries | Made with pride 🐃🌿</p>
+  <div class="social-icons">
+    <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> <i class="fab fa-whatsapp"></i> <i class="fab fa-twitter"></i>
+  </div>
+  <p style="margin-top:10px; font-size:0.8rem;" data-key="footerTag">Trusted by farmers for high-protein feed & better milk yield</p>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
+
+  // Language translations
+  const translations = {
+    en: {
+      aboutHeroTitle: "Fueling India's Dairy Prosperity",
+      aboutHeroText: "Since 2012, Shiv Industries has been the trusted partner for thousands of dairy farmers across Gujarat.",
+      aboutMainTitle: "🌾 Who We Are",
+      storyTitle: "Our Story",
+      storyText: "Shiv Industries is a trusted name in Amreli, Gujarat, dedicated to manufacturing scientifically formulated cattle feed. We blend traditional knowledge with modern nutrition to empower dairy farmers. Our journey began with a simple mission: to provide high-quality, affordable cattle feed that maximizes milk yield and ensures animal health.",
+      visionTitle: "Our Vision",
+      visionText: "To be India's most reliable cattle feed brand, driving dairy prosperity through high-quality nutrition and farmer-first innovation. We envision a future where every dairy farmer in India has access to premium nutrition that transforms their livelihood.",
+      missionTitle: "Our Mission",
+      missionText: "Customer satisfaction, uncompromised quality, and continuous R&D — ensuring every bag of feed boosts milk yield and animal health. We are committed to sustainable practices and empowering the farming community.",
+      valuesTitle: "💎 Our Core Values",
+      value1Title: "Quality First",
+      value1Desc: "We use only the finest raw materials and rigorous testing to ensure every batch meets the highest nutritional standards.",
+      value2Title: "Farmer Partnership",
+      value2Desc: "We work closely with dairy farmers to understand their needs and provide tailored nutritional solutions.",
+      value3Title: "Innovation",
+      value3Desc: "Continuous research and development to bring the latest advancements in animal nutrition to our farmers.",
+      value4Title: "Animal Welfare",
+      value4Desc: "Our formulations are designed to promote optimal animal health, longevity, and well-being.",
+      leadershipTitle: "🤝 Our Leadership Team",
+      role1: "Customer Relations & Business Growth",
+      desc1: "Expert in handling customers and maintaining strong relationships. Trusted by 500+ dairy farmers across Saurashtra. With over 15 years of experience, he ensures every farmer receives personalized attention and support.",
+      role2: "Quality Control & Production",
+      desc2: "Ensures raw material quality (cotton seeds, grains) and final feed consistency. Rigorous testing for optimal nutrition. His expertise guarantees that every bag meets our premium quality standards.",
+      role3: "Finance & E-Business Operations",
+      desc3: "Handles billing, banking, online operations, and digital business. Modernizing supply chain for seamless delivery and bringing transparency to all business operations.",
+      statFarmers: "Happy Farmers",
+      statYears: "Years of Excellence",
+      statTonnes: "Tonnes Supplied",
+      statProducts: "Premium Products",
+      footerText: "© 2026 Shiv Industries | Made with pride 🐃🌿",
+      footerTag: "Trusted by farmers for high-protein feed & better milk yield"
+    },
+    hi: {
+      aboutHeroTitle: "भारत की डेयरी समृद्धि को बढ़ावा",
+      aboutHeroText: "2012 से, शिव इंडस्ट्रीज गुजरात के हजारों डेयरी किसानों के लिए विश्वसनीय भागीदार है।",
+      aboutMainTitle: "🌾 हम कौन हैं",
+      storyTitle: "हमारी कहानी",
+      storyText: "शिव इंडस्ट्रीज अमरेली, गुजरात में एक विश्वसनीय नाम है, जो वैज्ञानिक रूप से तैयार पशु आहार के निर्माण के लिए समर्पित है। हम डेयरी किसानों को सशक्त बनाने के लिए पारंपरिक ज्ञान को आधुनिक पोषण के साथ मिलाते हैं।",
+      visionTitle: "हमारा दृष्टिकोण",
+      visionText: "भारत का सबसे भरोसेमंद पशु आहार ब्रांड बनना, उच्च गुणवत्ता वाले पोषण और किसान-प्रथम नवाचार के माध्यम से डेयरी समृद्धि को बढ़ावा देना।",
+      missionTitle: "हमारा मिशन",
+      missionText: "ग्राहक संतुष्टि, अटल गुणवत्ता, और निरंतर अनुसंधान — सुनिश्चित करना कि फीड का हर बैग दूध उत्पादन और पशु स्वास्थ्य को बढ़ाए।",
+      valuesTitle: "💎 हमारे मूल्य",
+      value1Title: "गुणवत्ता प्रथम",
+      value1Desc: "हम केवल बेहतरीन कच्चे माल और कठोर परीक्षण का उपयोग करते हैं।",
+      value2Title: "किसान साझेदारी",
+      value2Desc: "हम डेयरी किसानों के साथ मिलकर काम करते हैं।",
+      value3Title: "नवाचार",
+      value3Desc: "निरंतर अनुसंधान और विकास।",
+      value4Title: "पशु कल्याण",
+      value4Desc: "हमारे फॉर्मूलेशन पशु स्वास्थ्य को बढ़ावा देने के लिए डिज़ाइन किए गए हैं।",
+      leadershipTitle: "🤝 हमारी टीम",
+      role1: "ग्राहक संबंध और व्यवसाय विकास",
+      desc1: "ग्राहकों को संभालने और मजबूत संबंध बनाए रखने में विशेषज्ञ।",
+      role2: "गुणवत्ता नियंत्रण और उत्पादन",
+      desc2: "कच्चे माल और अंतिम फीड की गुणवत्ता सुनिश्चित करता है।",
+      role3: "वित्त और ई-बिजनेस संचालन",
+      desc3: "बिलिंग, बैंकिंग, ऑनलाइन संचालन और डिजिटल व्यवसाय संभालता है।",
+      statFarmers: "खुश किसान",
+      statYears: "वर्षों का अनुभव",
+      statTonnes: "टन आपूर्ति",
+      statProducts: "प्रीमियम उत्पाद",
+      footerText: "© 2026 शिव इंडस्ट्रीज | गर्व से बनाया 🐃🌿",
+      footerTag: "उच्च प्रोटीन फीड और बेहतर दूध उत्पादन के लिए किसानों द्वारा भरोसेमंद"
+    },
+    gu: {
+      aboutHeroTitle: "ભારતની ડેરી સમૃદ્ધિને વેગ આપીએ છીએ",
+      aboutHeroText: "2012 થી, શિવ ઇન્ડસ્ટ્રીઝ ગુજરાતના હજારો ડેરી ખેડૂતો માટે વિશ્વસનીય ભાગીદાર છે।",
+      aboutMainTitle: "🌾 અમે કોણ છીએ",
+      storyTitle: "અમારી વાર્તા",
+      storyText: "શિવ ઇન્ડસ્ટ્રીઝ અમરેલી, ગુજરાતમાં એક વિશ્વસનીય નામ છે, જે વૈજ્ઞાનિક રીતે ઘડવામાં આવેલ પશુ આહારના ઉત્પાદન માટે સમર્પિત છે।",
+      visionTitle: "અમારું દ્રષ્ટિકોણ",
+      visionText: "ભારતની સૌથી વિશ્વસનીય પશુ આહાર બ્રાન્ડ બનવું।",
+      missionTitle: "અમારું મિશન",
+      missionText: "ગ્રાહક સંતોષ, અટલ ગુણવત્તા અને સતત સંશોધન।",
+      valuesTitle: "💎 અમારા મૂલ્યો",
+      value1Title: "ગુણવત્તા પ્રથમ",
+      value1Desc: "અમે શ્રેષ્ઠ કાચા માલ અને કડક પરીક્ષણનો ઉપયોગ કરીએ છીએ।",
+      value2Title: "ખેડૂત ભાગીદારી",
+      value2Desc: "અમે ડેરી ખેડૂતો સાથે નજીકથી કામ કરીએ છીએ।",
+      value3Title: "નવીનતા",
+      value3Desc: "સતત સંશોધન અને વિકાસ।",
+      value4Title: "પશુ કલ્યાણ",
+      value4Desc: "અમારા ફોર્મ્યુલેશન પશુ સ્વાસ્થ્યને પ્રોત્સાહન આપવા માટે ડિઝાઇન કરવામાં આવ્યા છે।",
+      leadershipTitle: "🤝 અમારી ટીમ",
+      role1: "ગ્રાહક સંબંધ અને વ્યવસાય વિકાસ",
+      desc1: "ગ્રાહકોને હેન્ડલ કરવામાં અને મજબૂત સંબંધો જાળવવામાં નિષ્ણાત।",
+      role2: "ગુણવત્તા નિયંત્રણ અને ઉત્પાદન",
+      desc2: "કાચા માલ અને અંતિમ ફીડની ગુણવત્તા સુનિશ્ચિત કરે છે।",
+      role3: "નાણાં અને ઈ-બિઝનેસ કામગીરી",
+      desc3: "બિલિંગ, બેંકિંગ, ઓનલાઈન કામગીરી અને ડિજિટલ વ્યવસાય સંભાળે છે।",
+      statFarmers: "ખુશ ખેડૂતો",
+      statYears: "વર્ષોનો અનુભવ",
+      statTonnes: "ટન સપ્લાય",
+      statProducts: "પ્રીમિયમ ઉત્પાદનો",
+      footerText: "© 2026 શિવ ઇન્ડસ્ટ્રીઝ | ગર્વથી બનાવ્યું 🐃🌿",
+      footerTag: "ઉચ્ચ પ્રોટીન ફીડ અને વધુ દૂધ ઉત્પાદન માટે ખેડૂતો દ્વારા વિશ્વસનીય"
+    }
+  };
+
+  let currentLang = 'en';
+
+  function updateLanguage() {
+    const t = translations[currentLang];
+    document.querySelectorAll('[data-key]').forEach(el => {
+      const key = el.getAttribute('data-key');
+      if (t[key]) el.innerText = t[key];
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      if (btn.getAttribute('data-lang') === currentLang) btn.classList.add('active');
+      else btn.classList.remove('active');
+    });
+  }
+
+  // Language switcher
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentLang = btn.getAttribute('data-lang');
+      updateLanguage();
+    });
+  });
+
+  // Initialize language
+  updateLanguage();
+
+  // Close mobile menu when clicking a link
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
+</script>
+</body>
+</html>

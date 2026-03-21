@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Our Products | Shiv Industries - Premium Cattle Feed</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', 'Inter', sans-serif;
+      background: radial-gradient(circle at 10% 30%, rgba(250,245,225,0.4) 0%, #fef7e0 100%);
+      color: #1e2f1c;
+      overflow-x: hidden;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #e9f5e9; }
+    ::-webkit-scrollbar-thumb { background: #2e7d32; border-radius: 10px; }
+
+    /* Navbar - Fully Responsive */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 245, 0.96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      padding: clamp(0.8rem, 3vw, 1rem) clamp(1rem, 4vw, 2rem);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: clamp(1.2rem, 5vw, 1.9rem);
+      font-weight: 800;
+      background: linear-gradient(130deg, #1e5a1e, #f5b81b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .logo span {
+      font-size: clamp(0.55rem, 3vw, 0.75rem);
+      font-weight: 500;
+      color: #5a6b4a;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: clamp(1rem, 3vw, 2rem);
+      list-style: none;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #2c3a2b;
+      transition: 0.3s;
+      position: relative;
+      font-size: clamp(0.85rem, 3vw, 1rem);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2.5px;
+      background: linear-gradient(90deg, #f5b81b, #2e7d32);
+      transition: 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #f5b81b;
+    }
+
+    .language-selector {
+      display: flex;
+      gap: 0.5rem;
+      background: rgba(46, 125, 50, 0.1);
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+    }
+
+    .lang-btn {
+      background: transparent;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 0.3rem 0.7rem;
+      border-radius: 30px;
+      transition: 0.3s;
+      font-size: clamp(0.7rem, 2.5vw, 0.85rem);
+      font-family: inherit;
+    }
+
+    .lang-btn.active {
+      background: #2e7d32;
+      color: white;
+    }
+
+    .lang-btn:hover:not(.active) {
+      background: #f5b81b;
+      color: #1e3a1e;
+    }
+
+    .menu-icon { display: none; font-size: 1.8rem; cursor: pointer; color: #2e7d32; }
+
+    /* Products Hero Section */
+    .products-hero {
+      background: linear-gradient(135deg, #2e7d32, #f5b81b);
+      padding: clamp(2rem, 8vw, 4rem) clamp(1rem, 5vw, 2rem);
+      text-align: center;
+      color: white;
+    }
+
+    .products-hero-content h1 {
+      font-size: clamp(1.8rem, 6vw, 2.8rem);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .products-hero-content p {
+      font-size: clamp(1rem, 4vw, 1.2rem);
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+
+    /* Sections */
+    .section {
+      padding: clamp(2rem, 8vw, 5rem) clamp(1rem, 5vw, 2rem);
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.6rem, 6vw, 2.6rem);
+      font-weight: 700;
+      margin-bottom: clamp(2rem, 5vw, 3rem);
+      background: linear-gradient(120deg, #2b6e2b, #e0a800);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      padding: 0 1rem;
+    }
+
+    .bg-light {
+      background: rgba(255, 251, 235, 0.6);
+      border-radius: 2rem;
+      margin: 2rem auto;
+    }
+
+    /* Products Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: clamp(1.5rem, 4vw, 2rem);
+      padding: clamp(0.5rem, 2vw, 1rem);
+    }
+
+    .product-card {
+      background: white;
+      border-radius: clamp(1rem, 4vw, 2rem);
+      overflow: hidden;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      text-align: center;
+      padding: clamp(1.2rem, 4vw, 1.8rem);
+      border: 1px solid rgba(245,184,27,0.2);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .product-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 30px 40px -12px rgba(46,125,50,0.3);
+      border-color: #f5b81b;
+    }
+
+    /* Product Image Container - Perfect Square, No Cropping */
+    .product-img {
+      background: linear-gradient(135deg, #fef5e3 0%, #fff8ed 100%);
+      width: min(100%, 200px);
+      height: auto;
+      aspect-ratio: 1 / 1;
+      max-width: 200px;
+      margin: 0 auto 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+      transition: all 0.4s ease;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.5s ease;
+      display: block;
+      background-color: #fef5e3;
+      padding: 8px;
+    }
+
+    .product-card:hover .product-img img {
+      transform: scale(1.05);
+    }
+
+    .product-img::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(46,125,50,0.05);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      border-radius: 20px;
+    }
+
+    .product-img:hover::after {
+      opacity: 1;
+    }
+
+    .product-card h3 {
+      font-size: clamp(1.1rem, 4vw, 1.4rem);
+      font-weight: 700;
+      margin: 0.75rem 0 0.5rem;
+      color: #1e3a1e;
+      line-height: 1.3;
+    }
+
+    .tagline {
+      background: #fef1d6;
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      font-size: clamp(0.7rem, 2.5vw, 0.85rem);
+      font-weight: 600;
+      color: #b96f0b;
+      margin: 0.5rem 0;
+    }
+
+    .product-desc {
+      margin: 0.75rem 0;
+      color: #555;
+      font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+
+    .product-specs {
+      display: flex;
+      justify-content: center;
+      gap: clamp(1rem, 3vw, 1.5rem);
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid #f0e6d0;
+      font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+      color: #2e7d32;
+      font-weight: 600;
+      flex-wrap: wrap;
+    }
+
+    .product-specs span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .product-specs i {
+      font-size: 1rem;
+      color: #f5b81b;
+    }
+
+    /* Benefits Grid */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: clamp(1.5rem, 4vw, 2rem);
+    }
+
+    .benefit-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: clamp(1.5rem, 4vw, 2rem);
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .benefit-card i {
+      font-size: clamp(2rem, 6vw, 2.5rem);
+      color: #f5b81b;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .benefit-card h3 {
+      font-size: clamp(1.1rem, 4vw, 1.3rem);
+      margin-bottom: 0.8rem;
+      color: #1e3a1e;
+    }
+
+    .benefit-card p {
+      font-size: clamp(0.85rem, 3vw, 0.95rem);
+      line-height: 1.5;
+      color: #666;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, #f5b81b, #2e7d32);
+      padding: clamp(2rem, 8vw, 4rem) clamp(1rem, 5vw, 2rem);
+      text-align: center;
+      color: white;
+      margin: 2rem auto;
+      border-radius: clamp(1.5rem, 5vw, 2rem);
+      max-width: 1300px;
+      width: calc(100% - 2rem);
+    }
+
+    .cta-content h2 {
+      font-size: clamp(1.5rem, 5vw, 2.2rem);
+      margin-bottom: 1rem;
+    }
+
+    .cta-content p {
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      margin-bottom: 1.5rem;
+      opacity: 0.95;
+    }
+
+    .cta-btn {
+      background: white;
+      color: #2e7d32;
+      padding: clamp(0.8rem, 3vw, 1rem) clamp(1.5rem, 5vw, 2.5rem);
+      border: none;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: clamp(0.9rem, 3vw, 1.1rem);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.05);
+      background: #1e3a1e;
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      background: #0e2a0b;
+      color: #eeddbb;
+      text-align: center;
+      padding: clamp(1.5rem, 5vw, 2rem);
+      margin-top: 2rem;
+    }
+
+    .social-icons i {
+      font-size: clamp(1.2rem, 4vw, 1.5rem);
+      margin: 0 10px;
+      color: #f5b81b;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+
+    .social-icons i:hover {
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* ========== MEDIA QUERIES ========== */
+
+    /* Large Desktop (1200px+) */
+    @media (min-width: 1200px) {
+      .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* Desktop (992px - 1199px) */
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* Tablet Landscape (768px - 991px) */
+    @media (min-width: 768px) and (max-width: 991px) {
+      .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      
+      .nav-links {
+        display: flex !important;
+        gap: 1.5rem;
+      }
+      
+      .menu-icon {
+        display: none !important;
+      }
+      
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Tablet Portrait (576px - 767px) */
+    @media (min-width: 576px) and (max-width: 767px) {
+      .navbar {
+        flex-direction: column;
+        padding: 1rem;
+      }
+      
+      .logo {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .menu-icon {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: white;
+        padding: 1rem;
+        text-align: center;
+        margin-top: 1rem;
+        border-radius: 2rem;
+        gap: 1rem;
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+      }
+      
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Mobile Landscape (480px - 575px) */
+    @media (min-width: 480px) and (max-width: 575px) {
+      .navbar {
+        flex-direction: column;
+        padding: 0.8rem;
+      }
+      
+      .logo {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .logo h1 {
+        font-size: 1.3rem;
+      }
+      
+      .menu-icon {
+        display: block;
+      }
+      
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: white;
+        padding: 1rem;
+        text-align: center;
+        margin-top: 1rem;
+        border-radius: 2rem;
+        gap: 0.8rem;
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .products-hero-content h1 {
+        font-size: 1.8rem;
+      }
+      
+      .products-hero-content p {
+        font-size: 1rem;
+      }
+      
+      .products-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .product-img {
+        max-width: 180px;
+      }
+    }
+
+    /* Mobile Portrait (320px - 479px) */
+    @media (max-width: 479px) {
+      .navbar {
+        flex-direction: column;
+        padding: 0.8rem;
+      }
+      
+      .logo {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .logo h1 {
+        font-size: 1.1rem;
+      }
+      
+      .logo span {
+        font-size: 0.55rem;
+      }
+      
+      .menu-icon {
+        display: block;
+        font-size: 1.5rem;
+      }
+      
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: white;
+        padding: 0.8rem;
+        text-align: center;
+        margin-top: 0.8rem;
+        border-radius: 1.5rem;
+        gap: 0.8rem;
+      }
+      
+      .nav-links.active {
+        display: flex;
+      }
+      
+      .nav-links a {
+        font-size: 0.85rem;
+      }
+      
+      .language-selector {
+        justify-content: center;
+      }
+      
+      .lang-btn {
+        padding: 0.2rem 0.5rem;
+        font-size: 0.7rem;
+      }
+      
+      .products-hero {
+        padding: 1.5rem 1rem;
+      }
+      
+      .products-hero-content h1 {
+        font-size: 1.5rem;
+      }
+      
+      .products-hero-content p {
+        font-size: 0.9rem;
+      }
+      
+      .section {
+        padding: 1.5rem 1rem;
+      }
+      
+      .section-title {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .products-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+      
+      .product-card {
+        padding: 1rem;
+      }
+      
+      .product-img {
+        max-width: 150px;
+      }
+      
+      .product-img img {
+        padding: 5px;
+      }
+      
+      .product-card h3 {
+        font-size: 1.1rem;
+      }
+      
+      .tagline {
+        font-size: 0.7rem;
+        padding: 0.3rem 1rem;
+      }
+      
+      .product-desc {
+        font-size: 0.85rem;
+      }
+      
+      .product-specs {
+        gap: 1rem;
+        font-size: 0.7rem;
+      }
+      
+      .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      .benefit-card {
+        padding: 1.2rem;
+      }
+      
+      .benefit-card i {
+        font-size: 1.8rem;
+      }
+      
+      .benefit-card h3 {
+        font-size: 1.1rem;
+      }
+      
+      .benefit-card p {
+        font-size: 0.85rem;
+      }
+      
+      .cta-section {
+        padding: 1.5rem;
+        margin: 1rem auto;
+      }
+      
+      .cta-content h2 {
+        font-size: 1.3rem;
+      }
+      
+      .cta-content p {
+        font-size: 0.9rem;
+      }
+      
+      .cta-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+      }
+      
+      footer {
+        padding: 1.2rem;
+      }
+      
+      footer p {
+        font-size: 0.7rem;
+      }
+      
+      .social-icons i {
+        font-size: 1rem;
+        margin: 0 8px;
+      }
+    }
+
+    /* Extra Small Devices (below 320px) */
+    @media (max-width: 320px) {
+      .products-hero-content h1 {
+        font-size: 1.3rem;
+      }
+      
+      .section-title {
+        font-size: 1.2rem;
+      }
+      
+      .product-img {
+        max-width: 120px;
+      }
+    }
+
+    /* Landscape Mode for Mobile */
+    @media (max-width: 768px) and (orientation: landscape) {
+      .navbar {
+        padding: 0.5rem 1rem;
+      }
+      
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .product-card, .benefit-card {
+      animation: fadeInUp 0.5s ease-out forwards;
+    }
+
+    .product-card:nth-child(1) { animation-delay: 0.1s; }
+    .product-card:nth-child(2) { animation-delay: 0.2s; }
+    .product-card:nth-child(3) { animation-delay: 0.3s; }
+    .product-card:nth-child(4) { animation-delay: 0.4s; }
+
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Focus States */
+    a:focus, button:focus {
+      outline: 2px solid #f5b81b;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<nav class="navbar">
+  <div class="logo">
+    <h1>SHIV INDUSTRIES</h1>
+    <span>✨ Premium Dairy Nutrition | Amreli, Gujarat</span>
+  </div>
+  <div class="menu-icon" id="menuToggle"><i class="fas fa-bars"></i></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="products.html" class="active">Products</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li>
+      <div class="language-selector">
+        <button class="lang-btn" data-lang="gu">ગુજરાતી</button>
+        <button class="lang-btn" data-lang="hi">हिंदी</button>
+        <button class="lang-btn active" data-lang="en">English</button>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<!-- Products Hero -->
+<section class="products-hero">
+  <div class="products-hero-content">
+    <h1 data-key="productsHeroTitle">Premium Quality Cattle Feed</h1>
+    <p data-key="productsHeroSub">Scientifically formulated for maximum milk yield and animal health</p>
+  </div>
+</section>
+
+<!-- Products Grid -->
+<section class="section">
+  <h2 class="section-title" data-key="productsTitle">🐄 Our Complete Range</h2>
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="product-img"><img src="khol.jpeg" alt="Kailash Kapasiya Khod"></div>
+      <h3 data-key="prod1Name">Kailash Kapasiya Khod</h3>
+      <div class="tagline" data-key="prod1Tag">High Protein | Better Yield</div>
+      <p class="product-desc" data-key="prod1Desc">🏆 Rich in minerals & energy for maximum milk production. Ideal for high-yielding dairy cows.</p>
+      <div class="product-specs">
+        <span><i class="fas fa-weight-hanging"></i> 44.500 KG</span>
+        <span><i class="fas fa-chart-line"></i> 22% Protein</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-img"><img src="shivdhara.jpeg" alt="Shivdhara Pashu Aahar"></div>
+      <h3 data-key="prod2Name">Shivdhara Pashu Aahar</h3>
+      <div class="tagline" data-key="prod2Tag">35 KG | Milk Booster</div>
+      <p class="product-desc" data-key="prod2Desc">🥛 Improves fat & SNF content, increases daily milk yield by up to 15%.</p>
+      <div class="product-specs">
+        <span><i class="fas fa-weight-hanging"></i> 35 KG</span>
+        <span><i class="fas fa-chart-line"></i> 20% Protein</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-img"><img src="balaji.jpeg" alt="Balaji Pashu Aahar"></div>
+      <h3 data-key="prod3Name">Balaji Pashu Aahar</h3>
+      <div class="tagline" data-key="prod3Tag">40 KG | Strong Immunity</div>
+      <p class="product-desc" data-key="prod3Desc">💪 Higher digestibility with prebiotics and essential vitamins for strong immunity.</p>
+      <div class="product-specs">
+        <span><i class="fas fa-weight-hanging"></i> 40 KG</span>
+        <span><i class="fas fa-chart-line"></i> 18% Protein</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-img"><img src="makaybhushu.jpeg" alt="Kailash Special Feed"></div>
+      <h3 data-key="prod4Name">Kailash Special Feed</h3>
+      <div class="tagline" data-key="prod4Tag">30 KG | Premium Formula</div>
+      <p class="product-desc" data-key="prod4Desc">🌟 Scientifically balanced for high-yield dairy cows with added minerals and vitamins.</p>
+      <div class="product-specs">
+        <span><i class="fas fa-weight-hanging"></i> 30 KG</span>
+        <span><i class="fas fa-chart-line"></i> 24% Protein</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Product Benefits -->
+<section class="section bg-light">
+  <h2 class="section-title" data-key="benefitsTitle">✨ Why Choose Our Products?</h2>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <i class="fas fa-chart-line"></i>
+      <h3 data-key="benefit1">Increased Milk Yield</h3>
+      <p data-key="benefit1Desc">Our scientifically formulated feed boosts milk production by 10-15%.</p>
+    </div>
+    <div class="benefit-card">
+      <i class="fas fa-heartbeat"></i>
+      <h3 data-key="benefit2">Better Animal Health</h3>
+      <p data-key="benefit2Desc">Rich in essential nutrients for stronger immunity and overall health.</p>
+    </div>
+    <div class="benefit-card">
+      <i class="fas fa-percent"></i>
+      <h3 data-key="benefit3">Higher Fat & SNF</h3>
+      <p data-key="benefit3Desc">Improves milk quality with better fat and SNF content.</p>
+    </div>
+    <div class="benefit-card">
+      <i class="fas fa-leaf"></i>
+      <h3 data-key="benefit4">100% Natural</h3>
+      <p data-key="benefit4Desc">Made from premium quality grains and natural ingredients.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section">
+  <div class="cta-content">
+    <h2 data-key="ctaTitle">Ready to Boost Your Dairy Production?</h2>
+    <p data-key="ctaText">Contact us today for bulk orders and special pricing</p>
+    <button class="cta-btn" onclick="location.href='contact.html'" data-key="ctaBtn">Get in Touch</button>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p data-key="footerText">© 2026 Shiv Industries | Made with pride 🐃🌿</p>
+  <div class="social-icons">
+    <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> <i class="fab fa-whatsapp"></i> <i class="fab fa-twitter"></i>
+  </div>
+  <p style="margin-top:10px; font-size:0.8rem;" data-key="footerTag">Trusted by farmers for high-protein feed & better milk yield</p>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
+
+  // Language translations
+  const translations = {
+    en: {
+      productsHeroTitle: "Premium Quality Cattle Feed",
+      productsHeroSub: "Scientifically formulated for maximum milk yield and animal health",
+      productsTitle: "🐄 Our Complete Range",
+      prod1Name: "Kailash Kapasiya Khod",
+      prod1Tag: "High Protein | Better Yield",
+      prod1Desc: "🏆 Rich in minerals & energy for maximum milk production. Ideal for high-yielding dairy cows.",
+      prod2Name: "Shivdhara Pashu Aahar",
+      prod2Tag: "35 KG | Milk Booster",
+      prod2Desc: "🥛 Improves fat & SNF content, increases daily milk yield by up to 15%.",
+      prod3Name: "Balaji Pashu Aahar",
+      prod3Tag: "40 KG | Strong Immunity",
+      prod3Desc: "💪 Higher digestibility with prebiotics and essential vitamins for strong immunity.",
+      prod4Name: "Kailash Special Feed",
+      prod4Tag: "30 KG | Premium Formula",
+      prod4Desc: "🌟 Scientifically balanced for high-yield dairy cows with added minerals and vitamins.",
+      benefitsTitle: "✨ Why Choose Our Products?",
+      benefit1: "Increased Milk Yield",
+      benefit1Desc: "Our scientifically formulated feed boosts milk production by 10-15%.",
+      benefit2: "Better Animal Health",
+      benefit2Desc: "Rich in essential nutrients for stronger immunity and overall health.",
+      benefit3: "Higher Fat & SNF",
+      benefit3Desc: "Improves milk quality with better fat and SNF content.",
+      benefit4: "100% Natural",
+      benefit4Desc: "Made from premium quality grains and natural ingredients.",
+      ctaTitle: "Ready to Boost Your Dairy Production?",
+      ctaText: "Contact us today for bulk orders and special pricing",
+      ctaBtn: "Get in Touch",
+      footerText: "© 2026 Shiv Industries | Made with pride 🐃🌿",
+      footerTag: "Trusted by farmers for high-protein feed & better milk yield"
+    },
+    hi: {
+      productsHeroTitle: "प्रीमियम गुणवत्ता पशु आहार",
+      productsHeroSub: "अधिकतम दूध उत्पादन और पशु स्वास्थ्य के लिए वैज्ञानिक रूप से तैयार",
+      productsTitle: "🐄 हमारी संपूर्ण श्रृंखला",
+      prod1Name: "कैलाश कपासिया खोद",
+      prod1Tag: "उच्च प्रोटीन | बेहतर उत्पादन",
+      prod1Desc: "🏆 खनिज और ऊर्जा से भरपूर, उच्च उपज देने वाली डेयरी गायों के लिए आदर्श।",
+      prod2Name: "शिवधारा पशु आहार",
+      prod2Tag: "35 किलो | दूध बूस्टर",
+      prod2Desc: "🥛 फैट और एसएनएफ में सुधार, दैनिक दूध उत्पादन में 15% तक की वृद्धि।",
+      prod3Name: "बालाजी पशु आहार",
+      prod3Tag: "40 किलो | मजबूत प्रतिरक्षा",
+      prod3Desc: "💪 मजबूत प्रतिरक्षा के लिए प्रीबायोटिक्स और आवश्यक विटामिन के साथ उच्च पाचनशक्ति।",
+      prod4Name: "कैलाश स्पेशल फीड",
+      prod4Tag: "30 किलो | प्रीमियम फॉर्मूला",
+      prod4Desc: "🌟 अतिरिक्त खनिज और विटामिन के साथ उच्च उपज देने वाली डेयरी गायों के लिए वैज्ञानिक रूप से संतुलित।",
+      benefitsTitle: "✨ हमारे उत्पाद क्यों चुनें?",
+      benefit1: "बढ़ा हुआ दूध उत्पादन",
+      benefit1Desc: "हमारा वैज्ञानिक रूप से तैयार फीड दूध उत्पादन को 10-15% तक बढ़ाता है।",
+      benefit2: "बेहतर पशु स्वास्थ्य",
+      benefit2Desc: "मजबूत प्रतिरक्षा और समग्र स्वास्थ्य के लिए आवश्यक पोषक तत्वों से भरपूर।",
+      benefit3: "उच्च फैट और एसएनएफ",
+      benefit3Desc: "बेहतर फैट और एसएनएफ सामग्री के साथ दूध की गुणवत्ता में सुधार।",
+      benefit4: "100% प्राकृतिक",
+      benefit4Desc: "प्रीमियम गुणवत्ता वाले अनाज और प्राकृतिक अवयवों से बना।",
+      ctaTitle: "अपने डेयरी उत्पादन को बढ़ाने के लिए तैयार हैं?",
+      ctaText: "थोक ऑर्डर और विशेष मूल्य निर्धारण के लिए आज ही संपर्क करें",
+      ctaBtn: "संपर्क करें",
+      footerText: "© 2026 शिव इंडस्ट्रीज | गर्व से बनाया 🐃🌿",
+      footerTag: "उच्च प्रोटीन फीड और बेहतर दूध उत्पादन के लिए किसानों द्वारा भरोसेमंद"
+    },
+    gu: {
+      productsHeroTitle: "પ્રીમિયમ ગુણવત્તા પશુ આહાર",
+      productsHeroSub: "મહત્તમ દૂધ ઉત્પાદન અને પશુ સ્વાસ્થ્ય માટે વૈજ્ઞાનિક રીતે ઘડવામાં આવેલ",
+      productsTitle: "🐄 અમારી સંપૂર્ણ શ્રેણી",
+      prod1Name: "કૈલાશ કપાસિયા ખોદ",
+      prod1Tag: "ઉચ્ચ પ્રોટીન | વધુ ઉત્પાદન",
+      prod1Desc: "🏆 ખનિજો અને ઊર્જાથી ભરપૂર, વધુ દૂધ આપતી ગાયો માટે આદર્શ।",
+      prod2Name: "શિવધારા પશુ આહાર",
+      prod2Tag: "35 કિગ્રા | દૂધ બૂસ્ટર",
+      prod2Desc: "🥛 ફેટ અને એસએનએફ સુધારે, દૈનિક દૂધ ઉત્પાદનમાં 15% સુધીનો વધારો।",
+      prod3Name: "બાલાજી પશુ આહાર",
+      prod3Tag: "40 કિગ્રા | મજબૂત રોગપ્રતિકારક",
+      prod3Desc: "💪 મજબૂત રોગપ્રતિકારક શક્તિ માટે પ્રીબાયોટિક્સ અને આવશ્યક વિટામિન્સ સાથે ઉચ્ચ પાચનક્ષમતા।",
+      prod4Name: "કૈલાશ સ્પેશિયલ ફીડ",
+      prod4Tag: "30 કિગ્રા | પ્રીમિયમ ફોર્મ્યુલા",
+      prod4Desc: "🌟 વધારાના ખનિજો અને વિટામિન્સ સાથે વધુ દૂધ આપતી ગાયો માટે વૈજ્ઞાનિક રીતે સંતુલિત।",
+      benefitsTitle: "✨ અમારા ઉત્પાદનો કેમ પસંદ કરો?",
+      benefit1: "વધેલું દૂધ ઉત્પાદન",
+      benefit1Desc: "અમારું વૈજ્ઞાનિક રીતે તૈયાર ફીડ દૂધ ઉત્પાદનને 10-15% સુધી વધારે છે।",
+      benefit2: "બહેતર પશુ સ્વાસ્થ્ય",
+      benefit2Desc: "મજબૂત રોગપ્રતિકારક શક્તિ અને એકંદર સ્વાસ્થ્ય માટે આવશ્યક પોષક તત્વોથી ભરપૂર।",
+      benefit3: "ઉચ્ચ ફેટ અને એસએનએફ",
+      benefit3Desc: "બહેતર ફેટ અને એસએનએફ સામગ્રી સાથે દૂધની ગુણવત્તામાં સુધારો।",
+      benefit4: "100% કુદરતી",
+      benefit4Desc: "પ્રીમિયમ ગુણવત્તાવાળા અનાજ અને કુદરતી ઘટકોથી બનાવેલ।",
+      ctaTitle: "તમારા ડેરી ઉત્પાદનને વધારવા માટે તૈયાર છો?",
+      ctaText: "જથ્થાબંધ ઓર્ડર અને વિશેષ કિંમત માટે આજે જ સંપર્ક કરો",
+      ctaBtn: "સંપર્ક કરો",
+      footerText: "© 2026 શિવ ઇન્ડસ્ટ્રીઝ | ગર્વથી બનાવ્યું 🐃🌿",
+      footerTag: "ઉચ્ચ પ્રોટીન ફીડ અને વધુ દૂધ ઉત્પાદન માટે ખેડૂતો દ્વારા વિશ્વસનીય"
+    }
+  };
+
+  let currentLang = 'en';
+
+  function updateLanguage() {
+    const t = translations[currentLang];
+    document.querySelectorAll('[data-key]').forEach(el => {
+      const key = el.getAttribute('data-key');
+      if (t[key]) el.innerText = t[key];
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      if (btn.getAttribute('data-lang') === currentLang) btn.classList.add('active');
+      else btn.classList.remove('active');
+    });
+  }
+
+  // Language switcher
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentLang = btn.getAttribute('data-lang');
+      updateLanguage();
+    });
+  });
+
+  // Close mobile menu when clicking a link
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
+
+  // Initialize language
+  updateLanguage();
+</script>
+</body>
+</html>
