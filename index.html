@@ -198,6 +198,7 @@ footer b{display:block;color:#fff;font-size:1.2rem;margin-bottom:.4rem}
 
 <!-- Logo Pre-loader -->
 <div class="intro" aria-hidden="true">
+  <!-- Using a reliable placeholder image so it doesn't break -->
   <img src="https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Kailash Kapasiya Khol">
 </div>
 
@@ -205,7 +206,6 @@ footer b{display:block;color:#fff;font-size:1.2rem;margin-bottom:.4rem}
 <header class="nav" id="nav">
   <div class="wrap">
     <a class="brand" href="#home">
-      <!-- Using a reliable placeholder image for the logo so it doesn't break -->
       <img src="https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Logo">
       <b>KAILASH KAPASIYA KHOL</b>
     </a>
@@ -263,7 +263,6 @@ footer b{display:block;color:#fff;font-size:1.2rem;margin-bottom:.4rem}
         <!-- Product 1 -->
         <article class="card">
           <div class="pimg">
-            <!-- Replace with your actual khol.jpeg URL -->
             <img src="https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Kailash Kapasiya Khol">
             <b>44.5 KG</b>
           </div>
@@ -614,7 +613,7 @@ setInterval(() => {
   heroBgs[heroIdx].classList.add('on');
 }, 6000);
 
-// Counters
+// Counters (Safely animate, but start with real numbers in HTML)
 function animateCounter(el) {
   const target = +el.dataset.c;
   const suffix = el.dataset.s;
