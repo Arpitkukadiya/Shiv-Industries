@@ -47,9 +47,7 @@ section{padding:clamp(3rem,8vw,6rem) 0}
 .sub{text-align:center;max-width:680px;margin:0 auto clamp(1.8rem,5vw,2.8rem);color:#3d5545;font-size:clamp(.92rem,2.8vw,1.05rem);font-weight:400}
 .alt{background:rgba(255,251,240,.75);backdrop-filter:blur(4px)}
 
-/* =========================================
-   HEADER (Fixed & Responsive)
-   ========================================= */
+/* HEADER */
 .nav{
   position:fixed;top:0;left:0;right:0;z-index:1000;
   background:transparent;
@@ -96,9 +94,7 @@ section{padding:clamp(3rem,8vw,6rem) 0}
 .burger{display:none;background:none;border:0;font-size:1.5rem;color:#fff;cursor:pointer;width:44px;height:44px;transition:transform .2s;display:none;place-items:center}
 .nav.solid .burger{color:var(--g)}
 
-/* =========================================
-   HERO (Cow/Buffalo & Feed themed)
-   ========================================= */
+/* HERO */
 .hero{
   min-height:100vh;min-height:100svh;
   display:flex;align-items:center;justify-content:center;text-align:center;
@@ -108,26 +104,11 @@ section{padding:clamp(3rem,8vw,6rem) 0}
 .hero-bg{
   position:absolute;inset:0;z-index:0;
   background-size:cover;background-position:center;
-  opacity:0;transition:opacity 1.8s ease-in-out;
   transform:scale(1.05);
+  animation:kenBurns 20s infinite alternate;
+  background-image:linear-gradient(120deg,rgba(0,20,5,.8),rgba(15,40,10,.85)),url('https://images.pexels.com/photos/97533/pexels-photo-97533.jpeg?auto=compress&cs=tinysrgb&w=1600');
 }
-.hero-bg.active{opacity:1;z-index:1;animation:kenBurns 20s infinite alternate}
 @keyframes kenBurns{0%{transform:scale(1.05)}100%{transform:scale(1.15)}}
-
-/* 100% Cow / Buffalo / Feed images */
-.hero-bg:nth-child(1){
-  background-image:linear-gradient(120deg,rgba(0,20,5,.8),rgba(15,40,10,.85)),url('https://images.pexels.com/photos/1383281/pexels-photo-1383281.jpeg?auto=compress&cs=tinysrgb&w=1600');
-}
-.hero-bg:nth-child(2){
-  background-image:linear-gradient(120deg,rgba(0,20,5,.8),rgba(15,40,10,.85)),url('https://images.pexels.com/photos/1431326/pexels-photo-1431326.jpeg?auto=compress&cs=tinysrgb&w=1600');
-}
-.hero-bg:nth-child(3){
-  background-image:linear-gradient(120deg,rgba(0,20,5,.8),rgba(15,40,10,.85)),url('https://images.pexels.com/photos/1301885/pexels-photo-1301885.jpeg?auto=compress&cs=tinysrgb&w=1600');
-}
-.hero-bg:nth-child(4){
-  background-image:linear-gradient(120deg,rgba(0,20,5,.8),rgba(15,40,10,.85)),url('https://images.pexels.com/photos/2255459/pexels-photo-2255459.jpeg?auto=compress&cs=tinysrgb&w=1600');
-}
-
 .hero-box{
   position:relative;z-index:2;max-width:900px;margin:0 auto;width:100%;
   background:rgba(10,30,10,.45);
@@ -158,9 +139,7 @@ section{padding:clamp(3rem,8vw,6rem) 0}
 .btn.o{background:transparent;color:#fff;border:2px solid #fff;box-shadow:none}
 .btn.o:hover{background:#fff;color:var(--g)}
 
-/* =========================================
-   GRIDS & CARDS
-   ========================================= */
+/* GRIDS & CARDS */
 .grid{display:grid;gap:clamp(1.2rem,3vw,2rem)}
 .g4{grid-template-columns:repeat(4,1fr)}
 .g3{grid-template-columns:repeat(3,1fr)}
@@ -274,17 +253,13 @@ footer small{opacity:.8;font-size:.9rem}
 .lb img{max-height:90vh;max-width:100%;border-radius:16px}
 .lb button{position:absolute;top:max(1rem,env(safe-area-inset-top));right:1.2rem;background:#fff;border:0;width:44px;height:44px;border-radius:50%;font-size:1.2rem;cursor:pointer}
 
-/* =========================================
-   RESPONSIVE DESIGN (Tablet & Mobile)
-   ========================================= */
+/* RESPONSIVE */
 @media(max-width:1024px){
   .g4{grid-template-columns:repeat(2,1fr)}
   .g3{grid-template-columns:repeat(2,1fr)}
-  .strip{grid-template-columns:repeat(2,1fr)}
   .contact{grid-template-columns:1fr}
   .stats{grid-template-columns:repeat(2,1fr);gap:2rem}
 }
-
 @media(max-width:920px){
   .burger{display:grid}
   .menu{
@@ -305,16 +280,13 @@ footer small{opacity:.8;font-size:.9rem}
   .menu a.lnk::after{display:none}
   .lang{justify-content:center;gap:.5rem;background:#e8f3ea;border:1px solid #d0e5d4}
   .lang button{flex:1;padding:.6rem;color:#1f3b1f}
-  
   .nav .wrap{height:64px}
   .hero h1{font-size:clamp(1.8rem,6vw,2.5rem)}
   .hero p{font-size:1rem}
   .hero-box{padding:1.5rem 1rem}
 }
-
 @media(max-width:640px){
   .g4,.g3,.g2{grid-template-columns:1fr}
-  .strip{grid-template-columns:1fr}
   .stats{grid-template-columns:1fr;gap:1.5rem}
   .form{grid-template-columns:1fr}
   .btn{width:100%;max-width:340px}
@@ -359,11 +331,8 @@ footer small{opacity:.8;font-size:.9rem}
 </header>
 
 <main>
-<!-- HERO -->
+<!-- HERO with single buffalo background -->
 <section class="hero" id="home">
- <div class="hero-bg active"></div>
- <div class="hero-bg"></div>
- <div class="hero-bg"></div>
  <div class="hero-bg"></div>
  <div class="hero-box">
   <h1 data-key="heroTitle">Premium Cattle Feed for <span>Better Milk & Health</span></h1>
@@ -381,48 +350,29 @@ footer small{opacity:.8;font-size:.9rem}
   <h2 class="title" data-key="productsTitle">🐄 Our Complete Range</h2>
   <p class="sub" data-key="productsHeroSub">Scientifically formulated for maximum milk yield and animal health</p>
   <div class="grid g4">
-   <!-- Product 1 -->
    <article class="card prod">
-     <div class="pimg">
-       <!-- Cow eating feed -->
-       <img src="https://images.pexels.com/photos/1431326/pexels-photo-1431326.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Kailash Kapasiya Khol" loading="lazy">
-     </div>
+     <div class="pimg"><img src="khol.jpeg" alt="Kailash Kapasiya Khol" loading="lazy"></div>
      <h3 data-key="prod1Name">Kailash Kapasiya Khol</h3>
      <span class="tag" data-key="prod1Tag"></span>
      <p data-key="prod1Desc"></p>
      <div class="specs"><span><i class="fas fa-weight-hanging"></i>44.5 KG</span><span><i class="fas fa-chart-line"></i>22% <b data-key="protein">Protein</b></span></div>
    </article>
-   
-   <!-- Product 2 -->
    <article class="card prod">
-     <div class="pimg">
-       <!-- Buffalo feeding -->
-       <img src="https://images.pexels.com/photos/1301885/pexels-photo-1301885.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Shivdhara Pashu Aahar" loading="lazy">
-     </div>
+     <div class="pimg"><img src="shivdhara.jpeg" alt="Shivdhara Pashu Aahar" loading="lazy"></div>
      <h3 data-key="prod2Name"></h3>
      <span class="tag" data-key="prod2Tag"></span>
      <p data-key="prod2Desc"></p>
      <div class="specs"><span><i class="fas fa-weight-hanging"></i>35 KG</span><span><i class="fas fa-chart-line"></i>20% <b data-key="protein">Protein</b></span></div>
    </article>
-   
-   <!-- Product 3 -->
    <article class="card prod">
-     <div class="pimg">
-       <!-- Cattle feed raw material -->
-       <img src="https://images.pexels.com/photos/2255459/pexels-photo-2255459.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Balaji Pashu Aahar" loading="lazy">
-     </div>
+     <div class="pimg"><img src="balaji.jpeg" alt="Balaji Pashu Aahar" loading="lazy"></div>
      <h3 data-key="prod3Name"></h3>
      <span class="tag" data-key="prod3Tag"></span>
      <p data-key="prod3Desc"></p>
      <div class="specs"><span><i class="fas fa-weight-hanging"></i>40 KG</span><span><i class="fas fa-chart-line"></i>18% <b data-key="protein">Protein</b></span></div>
    </article>
-   
-   <!-- Product 4 -->
    <article class="card prod">
-     <div class="pimg">
-       <!-- Cow in field -->
-       <img src="https://images.pexels.com/photos/1383281/pexels-photo-1383281.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Kailash Special Feed" loading="lazy">
-     </div>
+     <div class="pimg"><img src="makaybhushu.jpeg" alt="Kailash Special Feed" loading="lazy"></div>
      <h3 data-key="prod4Name"></h3>
      <span class="tag" data-key="prod4Tag"></span>
      <p data-key="prod4Desc"></p>
@@ -513,9 +463,7 @@ footer small{opacity:.8;font-size:.9rem}
   <div class="grid g2">
    <!-- AMRELI -->
    <article class="card fac">
-    <button class="shot" data-zoom="card_shiv_amreli.jpg" aria-label="View card">
-      <img src="card_shiv_amreli.jpg" alt="Amreli card" loading="lazy">
-    </button>
+    <button class="shot" data-zoom="card_shiv_amreli.jpg" aria-label="View card"><img src="card_shiv_amreli.jpg" alt="Amreli card" loading="lazy"></button>
     <div class="body">
      <span class="badge" data-key="fac1Badge">Amreli Factory</span>
      <h3 data-key="fac1Name">Kailash Kapasiya Khol – Amreli</h3>
@@ -529,9 +477,7 @@ footer small{opacity:.8;font-size:.9rem}
    </article>
    <!-- GONDAL -->
    <article class="card fac">
-    <button class="shot" data-zoom="card_kailash_gondal.jpg" aria-label="View card">
-      <img src="card_kailash_gondal.jpg" alt="Gondal card" loading="lazy">
-    </button>
+    <button class="shot" data-zoom="card_kailash_gondal.jpg" aria-label="View card"><img src="card_kailash_gondal.jpg" alt="Gondal card" loading="lazy"></button>
     <div class="body">
      <span class="badge" data-key="fac2Badge">Gondal Factory</span>
      <h3 data-key="fac2Name">Kailash Kapasiya Khol – Gondal</h3>
@@ -956,16 +902,6 @@ function onScroll(){
 addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 $('#top').onclick = () => scrollTo({ top: 0 });
-
-// Hero background slider
-let heroIdx = 0;
-const heroBgs = $$('.hero-bg');
-function nextHero(){
-  heroBgs[heroIdx].classList.remove('active');
-  heroIdx = (heroIdx + 1) % heroBgs.length;
-  heroBgs[heroIdx].classList.add('active');
-}
-setInterval(nextHero, 5000);
 
 // counters
 function count(el){
