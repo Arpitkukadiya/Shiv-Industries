@@ -6,7 +6,8 @@
 <meta name="description" content="Kailash Kapasiya Khol – premium cattle feed from Amreli & Gondal, Gujarat. Order directly on WhatsApp.">
 <meta name="theme-color" content="#06361b">
 <title>Kailash Kapasiya Khol | Premium Cattle Feed – Amreli & Gondal</title>
-<link rel="icon" href="khol.jpeg">
+<!-- Fallback Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%230a5c2c'/><text x='50' y='50' dominant-baseline='central' text-anchor='middle' font-size='40' fill='%23f4b400'>K</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Gujarati:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -21,7 +22,7 @@
   --mut:#4b5f54;
   --bg:#f7f5ee;
   --w:#fff;
-  --nav:68px;
+  --nav:72px;
   --r:28px;
   --ease:cubic-bezier(.22,1,.36,1);
 }
@@ -32,32 +33,32 @@ body{
   background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden;
 }
 img{max-width:100%;display:block}
-a{color:inherit}
+a{color:inherit;text-decoration:none}
 :focus-visible{outline:3px solid var(--y);outline-offset:3px}
 .wrap{max-width:1240px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem)}
 h1,h2,h3{line-height:1.15;letter-spacing:-.02em}
 .sec{padding:clamp(3.5rem,9vw,7rem) 0}
 .h2{font-size:clamp(1.9rem,5.5vw,3.4rem);font-weight:800;color:var(--gd);max-width:18ch}
 .lead{color:var(--mut);max-width:52ch;margin-top:.9rem;font-size:clamp(.95rem,2.6vw,1.1rem)}
-/* intro shutter */
-.intro{position:fixed;inset:0;z-index:5000;background:var(--gd);display:grid;place-items:center;animation:up 1s var(--ease) 1.1s forwards;border-radius:0 0 50% 50%/0 0 60px 60px}
-.intro img{width:96px;height:96px;border-radius:50%;border:4px solid var(--y);animation:pop .8s var(--ease) both}
-.intro::after{content:'';position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--y);transform-origin:left;animation:bar 1s linear both}
+
+/* Intro (Fast & Clean) */
+.intro{position:fixed;inset:0;z-index:5000;background:var(--gd);display:grid;place-items:center;animation:up .8s var(--ease) .8s forwards;border-radius:0 0 50% 50%/0 0 40px 40px}
+.intro img{width:90px;height:90px;border-radius:50%;border:4px solid var(--y);object-fit:cover;animation:pop .6s var(--ease) both}
 @keyframes up{to{transform:translateY(-105%);visibility:hidden}}
-@keyframes pop{from{opacity:0;transform:scale(.5) rotate(-20deg)}}
-@keyframes bar{from{transform:scaleX(0)}}
-/* nav */
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding-top:env(safe-area-inset-top);transition:background .35s,box-shadow .35s}
-.nav.solid{background:rgba(247,245,238,.92);backdrop-filter:blur(14px);box-shadow:0 6px 24px -10px rgba(0,0,0,.25)}
+@keyframes pop{from{opacity:0;transform:scale(.5)}}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding-top:env(safe-area-inset-top);transition:background .3s,box-shadow .3s}
+.nav.solid{background:rgba(247,245,238,.95);backdrop-filter:blur(12px);box-shadow:0 4px 20px -10px rgba(0,0,0,.2)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:var(--nav);gap:1rem}
-.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:#fff;min-width:0}
+.brand{display:flex;align-items:center;gap:.65rem;color:#fff;min-width:0}
 .nav.solid .brand{color:var(--gd)}
 .brand img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--y);flex-shrink:0}
 .brand b{font-size:clamp(.95rem,4vw,1.2rem);font-weight:800;white-space:nowrap}
 .menu{display:flex;align-items:center;gap:clamp(1rem,2vw,1.8rem);list-style:none}
-.menu a.l{text-decoration:none;font-weight:600;font-size:.92rem;color:#fff;opacity:.9;padding:.3rem 0;position:relative}
+.menu a.l{font-weight:600;font-size:.92rem;color:#fff;opacity:.9;padding:.3rem 0;position:relative}
 .nav.solid .menu a.l{color:var(--ink)}
-.menu a.l::after{content:'';position:absolute;left:0;bottom:-3px;height:2px;width:100%;background:var(--y);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.menu a.l::after{content:'';position:absolute;left:0;bottom:-3px;height:2px;width:100%;background:var(--y);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
 .menu a.l:hover::after{transform:scaleX(1)}
 .lang{display:flex;background:rgba(255,255,255,.14);border-radius:40px;padding:3px}
 .nav.solid .lang{background:rgba(10,92,44,.1)}
@@ -66,276 +67,612 @@ h1,h2,h3{line-height:1.15;letter-spacing:-.02em}
 .lang button.on{background:var(--y);color:var(--gd)!important}
 .burger{display:none;background:none;border:0;color:#fff;font-size:1.5rem;width:44px;height:44px;cursor:pointer}
 .nav.solid .burger{color:var(--g)}
-/* hero – static, no sticky/shutter */
-.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;overflow:hidden;color:#fff;padding-top:var(--nav);padding-bottom:3rem}
-.hbg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s ease;transform:scale(1.06)}
-.hbg.on{opacity:1;animation:kb 14s ease-out forwards}
-@keyframes kb{to{transform:scale(1.16)}}
-.hero::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(4,30,15,.92) 8%,rgba(4,30,15,.55) 55%,rgba(4,30,15,.25))}
+
+/* Hero */
+.hero{position:relative;min-height:85vh;min-height:85svh;display:flex;align-items:center;overflow:hidden;color:#fff;padding-top:calc(var(--nav) + 2rem);padding-bottom:4rem}
+.hbg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.5s ease;transform:scale(1.05)}
+.hbg.on{opacity:1;animation:kb 15s ease-out forwards}
+@keyframes kb{to{transform:scale(1.15)}}
+.hero::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(4,30,15,.92) 10%,rgba(4,30,15,.6) 60%,rgba(4,30,15,.3))}
 .hc{position:relative;z-index:2}
-.hc h1{font-size:clamp(2.3rem,8.5vw,5.6rem);font-weight:800;max-width:13ch}
+.hc h1{font-size:clamp(2.5rem,8vw,5.5rem);font-weight:800;max-width:14ch;line-height:1.1}
 .hc h1 em{font-style:normal;color:var(--y)}
-.hc p{font-size:clamp(1rem,3vw,1.4rem);max-width:34ch;margin:1.2rem 0 2rem;color:#e9f3ec}
+.hc p{font-size:clamp(1rem,3vw,1.35rem);max-width:36ch;margin:1.2rem 0 2rem;color:#e9f3ec}
 .btns{display:flex;gap:.8rem;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font:700 1rem inherit;font-family:inherit;text-decoration:none;border:0;cursor:pointer;min-height:50px;padding:.85rem 1.7rem;border-radius:60px;background:var(--y);color:var(--gd);transition:transform .3s var(--ease),box-shadow .3s,background .3s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font:700 1rem inherit;font-family:inherit;border:0;cursor:pointer;min-height:50px;padding:.85rem 1.7rem;border-radius:60px;background:var(--y);color:var(--gd);transition:transform .3s var(--ease),box-shadow .3s,background .3s}
 .btn:hover{transform:translateY(-3px);background:var(--y2);box-shadow:0 14px 26px -10px rgba(244,180,0,.7)}
 .btn.o{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7)}
 .btn.o:hover{background:#fff;color:var(--gd)}
 .btn.g{background:var(--g);color:#fff}
 .btn.g:hover{background:var(--g2);box-shadow:0 14px 26px -10px rgba(10,92,44,.6)}
 .btn.wa{background:#25d366;color:#fff}
-.scroll{position:absolute;bottom:1.6rem;left:50%;z-index:2;width:26px;height:42px;border:2px solid rgba(255,255,255,.7);border-radius:20px;transform:translateX(-50%)}
-.scroll::after{content:'';position:absolute;left:50%;top:7px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--y);animation:sc 1.6s infinite}
-@keyframes sc{to{transform:translateY(16px);opacity:0}}
-/* trust strip */
-.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;padding:clamp(2rem,5vw,3rem) 0 0}
-.strip div{display:flex;align-items:center;gap:.8rem;font-weight:700;font-size:.92rem}
-.strip i{width:46px;height:46px;border-radius:14px;background:#e3f1e7;color:var(--g);display:grid;place-items:center;flex-shrink:0}
-/* products */
+
+/* Trust Strip */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;padding:2rem 0 0;margin-top:-3rem;position:relative;z-index:10}
+.strip div{background:var(--w);padding:1.2rem;border-radius:20px;display:flex;align-items:center;gap:1rem;font-weight:700;font-size:.9rem;box-shadow:0 10px 30px -10px rgba(0,0,0,.15);border:1px solid rgba(10,92,44,.08)}
+.strip i{width:42px;height:42px;border-radius:12px;background:#e3f1e7;color:var(--g);display:grid;place-items:center;flex-shrink:0;font-size:1.1rem}
+
+/* Products */
 .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-top:2.6rem}
-.card{background:var(--w);border-radius:var(--r);padding:1.2rem;display:flex;flex-direction:column;border:1px solid rgba(10,92,44,.1);transition:transform .45s var(--ease),box-shadow .45s}
+.card{background:var(--w);border-radius:var(--r);padding:1.2rem;display:flex;flex-direction:column;border:1px solid rgba(10,92,44,.1);transition:transform .4s var(--ease),box-shadow .4s}
 @media(hover:hover){.card:hover{transform:translateY(-8px);box-shadow:0 30px 44px -24px rgba(10,60,30,.45)}}
-.pimg{aspect-ratio:1;border-radius:20px;background:linear-gradient(145deg,#fdf6e0,#eaf4ec);overflow:hidden;position:relative}
-.pimg img{width:100%;height:100%;object-fit:contain;padding:10px;transition:transform .6s var(--ease)}
-.card:hover .pimg img{transform:scale(1.07)}
+.pimg{aspect-ratio:1;border-radius:20px;background:linear-gradient(145deg,#fdf6e0,#eaf4ec);overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}
+.pimg img{width:100%;height:100%;object-fit:contain;padding:10px;transition:transform .5s var(--ease)}
+.card:hover .pimg img{transform:scale(1.06)}
 .pimg b{position:absolute;top:10px;left:10px;background:var(--g);color:#fff;font-size:.75rem;padding:.25rem .7rem;border-radius:20px}
 .card h3{font-size:1.15rem;margin:1rem 0 .3rem;color:var(--gd)}
 .card .pt{font-size:.88rem;color:var(--mut);flex-grow:1}
 .meta{display:flex;gap:.5rem;margin:.9rem 0;flex-wrap:wrap}
 .meta span{background:#eef6f0;color:var(--g);font-weight:700;font-size:.78rem;padding:.3rem .8rem;border-radius:20px}
 .card .btn{width:100%;min-height:46px;font-size:.92rem}
-/* why: dark panel */
+
+/* Why Us */
 .dark{background:var(--gd);color:#fff;border-radius:clamp(28px,5vw,64px);margin:0 clamp(.5rem,2vw,1.5rem)}
 .dark .h2{color:#fff}
 .dark .lead{color:#b9d3c3}
 .why{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:2.6rem}
-.why div{padding:1.6rem;border-radius:var(--r);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);transition:background .3s,transform .4s var(--ease)}
-.why div:hover{background:rgba(244,180,0,.14);transform:translateY(-5px)}
+.why div{padding:1.6rem;border-radius:var(--r);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);transition:background .3s}
+.why div:hover{background:rgba(244,180,0,.1)}
 .why i{font-size:1.7rem;color:var(--y);margin-bottom:1rem}
 .why h3{font-size:1.1rem;margin-bottom:.4rem}
 .why p{font-size:.9rem;color:#b9d3c3}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem;padding-top:2.4rem;border-top:1px solid rgba(255,255,255,.15);text-align:center}
 .stats h2{font-size:clamp(2rem,6vw,3.6rem);font-weight:800;color:var(--y)}
 .stats p{font-size:.9rem;color:#b9d3c3}
-/* factories */
+
+/* Factories */
 .fgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:2.6rem}
 .fac{padding:0;overflow:hidden}
-.fac .shot{display:block;border:0;padding:0;cursor:zoom-in;background:#e8efe9;overflow:hidden}
-.fac .shot img{width:100%;aspect-ratio:16/10;object-fit:cover;transition:transform .7s var(--ease)}
-.fac .shot:hover img{transform:scale(1.05)}
+.fac .shot{display:block;border:0;padding:0;cursor:zoom-in;background:#e8efe9;overflow:hidden;width:100%}
+.fac .shot img{width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .5s var(--ease)}
+.fac .shot:hover img{transform:scale(1.04)}
 .fb{padding:1.5rem;display:flex;flex-direction:column;gap:.7rem}
-.fb h3{margin:0}
-.row{display:flex;gap:.7rem;font-size:.92rem;color:var(--mut)}
+.fb h3{margin:0;font-size:1.3rem;color:var(--gd)}
+.row{display:flex;gap:.7rem;font-size:.92rem;color:var(--mut);align-items:flex-start}
 .row i{color:var(--g);margin-top:.3rem;width:1rem;flex-shrink:0}
-.row a{font-weight:700;color:var(--ink);text-decoration:none}
-.fb .btns .btn{min-height:44px;padding:.6rem 1.2rem;font-size:.88rem}
-/* order */
+.row span{line-height:1.5}
+.row a{font-weight:700;color:var(--ink);display:inline-block;margin-top:.2rem}
+.fb .btns .btn{min-height:44px;padding:.6rem 1.2rem;font-size:.88rem;flex:1}
+
+/* Order Form */
 .order{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
-.form{background:var(--w);border-radius:var(--r);padding:clamp(1.3rem,3.5vw,2.2rem);box-shadow:0 30px 50px -30px rgba(10,60,30,.5);display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.form{background:var(--w);border-radius:var(--r);padding:clamp(1.3rem,3.5vw,2.2rem);box-shadow:0 30px 50px -30px rgba(10,60,30,.5);display:grid;grid-template-columns:1fr 1fr;gap:1rem;border:1px solid rgba(10,92,44,.1)}
 .form .f{grid-column:1/-1}
 label{display:block;font-size:.8rem;font-weight:700;color:var(--gd);margin-bottom:.3rem}
-input,select{width:100%;font:inherit;font-size:16px;padding:.8rem 1rem;border:2px solid #dbe7de;border-radius:14px;background:#fbfdfb;transition:border-color .25s,box-shadow .25s}
-input:focus,select:focus{outline:0;border-color:var(--g);box-shadow:0 0 0 4px rgba(10,92,44,.14)}
+input,select{width:100%;font:inherit;font-size:16px;padding:.8rem 1rem;border:2px solid #dbe7de;border-radius:14px;background:#fbfdfb;transition:border-color .2s}
+input:focus,select:focus{outline:0;border-color:var(--g)}
 .qty{display:flex;align-items:center;gap:.5rem}
-.qty button{width:46px;height:46px;border-radius:14px;border:2px solid #dbe7de;background:#fff;font-size:1.2rem;cursor:pointer;color:var(--g);flex-shrink:0}
+.qty button{width:46px;height:46px;border-radius:14px;border:2px solid #dbe7de;background:#fff;font-size:1.2rem;cursor:pointer;color:var(--g);flex-shrink:0;transition:background .2s}
+.qty button:hover{background:#f0f7f2}
 .qty input{text-align:center;font-weight:700}
-.tot{background:#eef6f0;border-radius:14px;padding:.8rem 1rem;font-weight:700;color:var(--g);font-size:.9rem}
-.steps{list-style:none;margin-top:1.6rem;display:grid;gap:1rem}
-.steps li{display:flex;gap:1rem;align-items:center;font-weight:600}
-.steps span{width:38px;height:38px;border-radius:50%;background:var(--y);color:var(--gd);display:grid;place-items:center;font-weight:800;flex-shrink:0}
-/* footer */
-footer{background:var(--gd);color:#cfe3d6;text-align:center;padding:2.6rem 1rem calc(2rem + env(safe-area-inset-bottom));font-size:.9rem}
-footer b{display:block;color:#fff;font-size:1.1rem;margin-bottom:.3rem}
+.tot{background:#eef6f0;border-radius:14px;padding:.8rem 1rem;font-weight:700;color:var(--g);font-size:.9rem;border:1px solid #cce3d3}
+.steps{list-style:none;margin-top:2rem;display:grid;gap:1.2rem}
+.steps li{display:flex;gap:1rem;align-items:center;font-weight:600;font-size:1.05rem}
+.steps span{width:40px;height:40px;border-radius:50%;background:var(--y);color:var(--gd);display:grid;place-items:center;font-weight:800;flex-shrink:0}
+
+/* Footer & Floating */
+footer{background:var(--gd);color:#cfe3d6;text-align:center;padding:3rem 1rem calc(2rem + env(safe-area-inset-bottom));font-size:.9rem;margin-top:4rem}
+footer b{display:block;color:#fff;font-size:1.2rem;margin-bottom:.4rem}
 .fab{position:fixed;right:max(1rem,env(safe-area-inset-right));bottom:max(1rem,env(safe-area-inset-bottom));z-index:900;display:flex;flex-direction:column;gap:.7rem}
-.fab a,.fab button{width:52px;height:52px;border-radius:50%;border:0;display:grid;place-items:center;font-size:1.35rem;color:#fff;background:var(--g);box-shadow:0 10px 22px rgba(0,0,0,.3);cursor:pointer;text-decoration:none;transition:transform .3s var(--ease)}
+.fab a,.fab button{width:52px;height:52px;border-radius:50%;border:0;display:grid;place-items:center;font-size:1.4rem;color:#fff;background:var(--g);box-shadow:0 10px 22px rgba(0,0,0,.3);cursor:pointer;transition:transform .2s}
 .fab a:hover,.fab button:hover{transform:scale(1.1)}
 .fab .w{background:#25d366}
-.fab .t{opacity:0;pointer-events:none;transition:opacity .3s,transform .3s}
+.fab .t{opacity:0;pointer-events:none;transition:opacity .3s}
 .fab .t.show{opacity:1;pointer-events:auto}
-.lb{position:fixed;inset:0;z-index:4000;background:rgba(0,0,0,.92);display:none;place-items:center;padding:1rem}
+.lb{position:fixed;inset:0;z-index:4000;background:rgba(0,0,0,.9);display:none;place-items:center;padding:1rem;backdrop-filter:blur(4px)}
 .lb.open{display:grid}
-.lb img{max-height:90vh;border-radius:14px}
-.lb button{position:absolute;top:max(1rem,env(safe-area-inset-top));right:1rem;width:44px;height:44px;border-radius:50%;border:0;background:#fff;font-size:1.2rem;cursor:pointer}
-/* reveal */
-.rv{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}.intro{display:none}}
-/* responsive */
-@media(max-width:1060px){.pgrid,.why{grid-template-columns:repeat(2,1fr)}.strip{grid-template-columns:repeat(2,1fr)}}
+.lb img{max-height:90vh;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.lb button{position:absolute;top:max(1rem,env(safe-area-inset-top));right:1rem;width:46px;height:46px;border-radius:50%;border:0;background:#fff;font-size:1.2rem;cursor:pointer}
+
+/* Responsive */
+@media(max-width:1060px){
+  .pgrid,.why{grid-template-columns:repeat(2,1fr)}
+  .strip{grid-template-columns:repeat(2,1fr);margin-top:-2rem}
+}
 @media(max-width:900px){
-.burger{display:block}
-.menu{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);padding:.4rem 1.2rem 1.2rem;border-radius:0 0 28px 28px;box-shadow:0 24px 40px rgba(0,0,0,.25);max-height:0;overflow:hidden;visibility:hidden;opacity:0;transition:.4s var(--ease)}
-.menu.open{max-height:90vh;visibility:visible;opacity:1}
-.menu li{border-bottom:1px solid rgba(0,0,0,.07)}
-.menu li:last-child{border:0;padding-top:1rem}
-.menu a.l{display:block;color:var(--ink)!important;padding:.95rem .3rem;font-size:1.05rem}
-.menu a.l::after{display:none}
-.lang{background:rgba(10,92,44,.1)!important;justify-content:center}
-.lang button{flex:1;color:var(--ink)}
-.order,.fgrid{grid-template-columns:1fr}
-.hero::before{background:linear-gradient(180deg,rgba(4,30,15,.75),rgba(4,30,15,.88))}
+  .burger{display:block}
+  .menu{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);padding:.5rem 1.5rem 1.5rem;border-radius:0 0 28px 28px;box-shadow:0 24px 40px rgba(0,0,0,.25);max-height:0;overflow:hidden;visibility:hidden;opacity:0;transition:.3s}
+  .menu.open{max-height:400px;visibility:visible;opacity:1}
+  .menu li{border-bottom:1px solid rgba(0,0,0,.06)}
+  .menu li:last-child{border:0;padding-top:1rem}
+  .menu a.l{display:block;color:var(--ink)!important;padding:1rem .2rem;font-size:1.05rem}
+  .menu a.l::after{display:none}
+  .lang{background:rgba(10,92,44,.1)!important;justify-content:center}
+  .lang button{flex:1;color:var(--ink)}
+  .order,.fgrid{grid-template-columns:1fr}
+  .hero::before{background:linear-gradient(180deg,rgba(4,30,15,.7),rgba(4,30,15,.9))}
+  .strip{grid-template-columns:1fr;margin-top:-1rem}
 }
 @media(max-width:600px){
-.pgrid,.why,.fgrid{grid-template-columns:1fr}
-.stats{grid-template-columns:repeat(2,1fr)}
-.form{grid-template-columns:1fr}
-.btns .btn{flex:1 1 100%}
-.fb .btns .btn{flex:1 1 130px}
-.brand b{font-size:.95rem}
-.fab a,.fab button{width:48px;height:48px}
-.scroll{display:none}
+  .pgrid,.why{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr);gap:1.5rem}
+  .form{grid-template-columns:1fr}
+  .btns .btn{width:100%}
+  .fb .btns .btn{width:100%}
+  .brand b{font-size:1rem}
+  .fab a,.fab button{width:48px;height:48px}
 }
-@media(min-width:1700px){html{font-size:18px}}
 </style>
 </head>
 <body>
-<div class="intro" aria-hidden="true"><img src="khol.jpeg" alt=""></div>
 
-<header class="nav" id="nav"><div class="wrap">
- <a class="brand" href="#home"><img src="khol.jpeg" alt="Kailash Kapasiya Khol logo"><b>KAILASH KAPASIYA KHOL</b></a>
- <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
- <ul class="menu" id="menu">
-  <li><a class="l" href="#products" data-i="nP">Products</a></li>
-  <li><a class="l" href="#why" data-i="nW">Why us</a></li>
-  <li><a class="l" href="#factories" data-i="nF">Factories</a></li>
-  <li><a class="l" href="#order" data-i="nO">Order</a></li>
-  <li><div class="lang"><button data-l="gu">ગુજરાતી</button><button data-l="hi">हिंदी</button><button data-l="en" class="on">English</button></div></li>
- </ul>
-</div></header>
-
-<main>
-<section class="hero" id="home">
- <div class="hbg on" style="background-image:url('https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=1800')"></div>
- <div class="hbg" style="background-image:url('https://images.pexels.com/photos/1405926/pexels-photo-1405926.jpeg?auto=compress&cs=tinysrgb&w=1800')"></div>
- <div class="hbg" style="background-image:url('https://images.pexels.com/photos/97533/pexels-photo-97533.jpeg?auto=compress&cs=tinysrgb&w=1800')"></div>
- <div class="wrap hc">
-  <h1><span data-i="h1">Better feed.</span> <em data-i="h2">More milk.</em></h1>
-  <p data-i="hp">High-protein cattle feed made in Amreli & Gondal. Order straight from the factory.</p>
-  <div class="btns"><a class="btn" href="#order"><i class="fas fa-bag-shopping"></i><span data-i="bOrder">Order now</span></a><a class="btn o" href="#products" data-i="bView">View products</a></div>
- </div>
- <div class="scroll" aria-hidden="true"></div>
-</section>
-
-<div class="wrap">
- <div class="strip">
-  <div class="rv"><i class="fas fa-industry"></i><span data-i="t1">2 factories in Gujarat</span></div>
-  <div class="rv"><i class="fas fa-flask"></i><span data-i="t2">Up to 24% protein</span></div>
-  <div class="rv"><i class="fas fa-truck-fast"></i><span data-i="t3">Delivery across Gujarat</span></div>
-  <div class="rv"><i class="fas fa-phone-volume"></i><span data-i="t4">Talk to the factory directly</span></div>
- </div>
+<!-- Logo Pre-loader -->
+<div class="intro" aria-hidden="true">
+  <img src="https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=200" alt="Kailash Kapasiya Khol">
 </div>
 
-<section class="sec" id="products"><div class="wrap">
- <h2 class="h2 rv" data-i="pT">Feed for every herd</h2>
- <p class="lead rv" data-i="pS">Four formulas. Pick one and order in under a minute.</p>
- <div class="pgrid">
-  <article class="card rv"><div class="pimg"><img src="khol.jpeg" alt="Kailash Kapasiya Khol" loading="lazy"><b>44.5 KG</b></div><h3>Kailash Kapasiya Khol</h3><p class="pt" data-i="d1">Rich in minerals and energy for maximum milk yield.</p><div class="meta"><span>22% <i data-i="pr">Protein</i></span></div><button class="btn g" data-p="Kailash Kapasiya Khol (44.5 KG)"><i class="fas fa-cart-plus"></i><span data-i="bAdd">Order this</span></button></article>
-  <article class="card rv"><div class="pimg"><img src="shivdhara.jpeg" alt="Shivdhara Pashu Aahar" loading="lazy"><b>35 KG</b></div><h3>Shivdhara Pashu Aahar</h3><p class="pt" data-i="d2">Improves fat and SNF, lifts daily milk yield.</p><div class="meta"><span>20% <i data-i="pr">Protein</i></span></div><button class="btn g" data-p="Shivdhara Pashu Aahar (35 KG)"><i class="fas fa-cart-plus"></i><span data-i="bAdd">Order this</span></button></article>
-  <article class="card rv"><div class="pimg"><img src="balaji.jpeg" alt="Balaji Pashu Aahar" loading="lazy"><b>40 KG</b></div><h3>Balaji Pashu Aahar</h3><p class="pt" data-i="d3">Easy to digest, with vitamins for strong immunity.</p><div class="meta"><span>18% <i data-i="pr">Protein</i></span></div><button class="btn g" data-p="Balaji Pashu Aahar (40 KG)"><i class="fas fa-cart-plus"></i><span data-i="bAdd">Order this</span></button></article>
-  <article class="card rv"><div class="pimg"><img src="makaybhushu.jpeg" alt="Kailash Special Feed" loading="lazy"><b>30 KG</b></div><h3>Kailash Special Feed</h3><p class="pt" data-i="d4">Balanced premium formula with added minerals.</p><div class="meta"><span>24% <i data-i="pr">Protein</i></span></div><button class="btn g" data-p="Kailash Special Feed (30 KG)"><i class="fas fa-cart-plus"></i><span data-i="bAdd">Order this</span></button></article>
- </div>
-</div></section>
+<!-- Navigation -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#home">
+      <!-- Using a reliable placeholder image for the logo so it doesn't break -->
+      <img src="https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Logo">
+      <b>KAILASH KAPASIYA KHOL</b>
+    </a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+    <ul class="menu" id="menu">
+      <li><a class="l" href="#products" data-i="nP">Products</a></li>
+      <li><a class="l" href="#why" data-i="nW">Why us</a></li>
+      <li><a class="l" href="#factories" data-i="nF">Factories</a></li>
+      <li><a class="l" href="#order" data-i="nO">Order</a></li>
+      <li>
+        <div class="lang">
+          <button data-l="gu">ગુજરાતી</button>
+          <button data-l="hi">हिंदी</button>
+          <button data-l="en" class="on">English</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>
 
-<section class="sec dark" id="why"><div class="wrap">
- <h2 class="h2 rv" data-i="wT">Built for dairy farmers</h2>
- <p class="lead rv" data-i="wS">Every bag is tested for nutrition before it leaves the factory.</p>
- <div class="why">
-  <div class="rv"><i class="fas fa-chart-line"></i><h3 data-i="w1">More milk</h3><p data-i="w1d">10–15% higher yield with regular feeding.</p></div>
-  <div class="rv"><i class="fas fa-heart-pulse"></i><h3 data-i="w2">Healthier cattle</h3><p data-i="w2d">Nutrients for stronger immunity.</p></div>
-  <div class="rv"><i class="fas fa-percent"></i><h3 data-i="w3">Better fat & SNF</h3><p data-i="w3d">Higher milk quality, better price per litre.</p></div>
-  <div class="rv"><i class="fas fa-leaf"></i><h3 data-i="w4">Natural grains</h3><p data-i="w4d">Made from quality grains and cotton seed.</p></div>
- </div>
- <div class="stats" id="stats">
-  <div><h2 data-c="872" data-s="+">0</h2><p data-i="s1">Happy farmers</p></div>
-  <div><h2 data-c="2450" data-s="+">0</h2><p data-i="s2">Orders delivered</p></div>
-  <div><h2 data-c="14" data-s="+">0</h2><p data-i="s3">Years of experience</p></div>
-  <div><h2 data-c="3850" data-s="+">0</h2><p data-i="s4">Tonnes supplied</p></div>
- </div>
-</div></section>
+<main>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hbg on" style="background-image:url('https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=1800')"></div>
+    <div class="hbg" style="background-image:url('https://images.pexels.com/photos/1405926/pexels-photo-1405926.jpeg?auto=compress&cs=tinysrgb&w=1800')"></div>
+    <div class="hbg" style="background-image:url('https://images.pexels.com/photos/97533/pexels-photo-97533.jpeg?auto=compress&cs=tinysrgb&w=1800')"></div>
+    
+    <div class="wrap hc">
+      <h1><span data-i="h1">Better feed.</span> <em data-i="h2">More milk.</em></h1>
+      <p data-i="hp">High-protein cattle feed made in Amreli & Gondal. Order straight from the factory.</p>
+      <div class="btns">
+        <a class="btn" href="#order"><i class="fas fa-bag-shopping"></i><span data-i="bOrder">Order now</span></a>
+        <a class="btn o" href="#products" data-i="bView">View products</a>
+      </div>
+    </div>
+  </section>
 
-<section class="sec" id="factories"><div class="wrap">
- <h2 class="h2 rv" data-i="fT">Visit our factories</h2>
- <p class="lead rv" data-i="fS">Two units in Gujarat. Tap a photo to enlarge it.</p>
- <div class="fgrid">
-  <article class="card fac rv"><button class="shot" data-z="card_shiv_amreli.jpg" aria-label="Enlarge"><img src="card_shiv_amreli.jpg" alt="Amreli factory card" loading="lazy"></button><div class="fb"><h3 data-i="a1">Amreli factory</h3>
-   <div class="row"><i class="fas fa-location-dot"></i><span data-i="a1a">Next to Shrinathji Chamber, Lathi Road, Amreli</span></div>
-   <div class="row"><i class="fas fa-phone"></i><span>Kuldipbhai <a href="tel:+919638158270">96381 58270</a><br>Ajaybhai <a href="tel:+919427745336">94277 45336</a></span></div>
-   <div class="btns"><a class="btn g" href="tel:+919638158270"><i class="fas fa-phone"></i><span data-i="bCall">Call</span></a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Shrinathji+Chamber+Lathi+Road+Amreli"><i class="fas fa-location-arrow"></i><span data-i="bDir">Directions</span></a></div></div></article>
-  <article class="card fac rv"><button class="shot" data-z="card_kailash_gondal.jpg" aria-label="Enlarge"><img src="card_kailash_gondal.jpg" alt="Gondal factory card" loading="lazy"></button><div class="fb"><h3 data-i="g1">Gondal factory</h3>
-   <div class="row"><i class="fas fa-location-dot"></i><span data-i="g1a">Plot 32, Vraj Industries-1, Anida Road, Gundala, Gondal</span></div>
-   <div class="row"><i class="fas fa-phone"></i><span>Maheshbhai <a href="tel:+919426756662">94267 56662</a></span></div>
-   <div class="btns"><a class="btn g" href="tel:+919426756662"><i class="fas fa-phone"></i><span data-i="bCall">Call</span></a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Vraj+Industries+Anida+Road+Gundala+Gondal"><i class="fas fa-location-arrow"></i><span data-i="bDir">Directions</span></a></div></div></article>
- </div>
-</div></section>
+  <!-- Trust Strip -->
+  <div class="wrap">
+    <div class="strip">
+      <div><i class="fas fa-industry"></i><span data-i="t1">2 factories in Gujarat</span></div>
+      <div><i class="fas fa-flask"></i><span data-i="t2">Up to 24% protein</span></div>
+      <div><i class="fas fa-truck-fast"></i><span data-i="t3">Delivery across Gujarat</span></div>
+      <div><i class="fas fa-phone-volume"></i><span data-i="t4">Talk to factory directly</span></div>
+    </div>
+  </div>
 
-<section class="sec" id="order" style="padding-top:0"><div class="wrap order">
- <div>
-  <h2 class="h2 rv" data-i="oT">Order in 3 steps</h2>
-  <p class="lead rv" data-i="oS">Your order goes straight to the factory on WhatsApp. No sign-up.</p>
-  <ul class="steps rv"><li><span>1</span><b data-i="o1">Choose feed and bags</b></li><li><span>2</span><b data-i="o2">Add your name and village</b></li><li><span>3</span><b data-i="o3">Send on WhatsApp – we confirm the price</b></li></ul>
- </div>
- <form class="form rv" id="of">
-  <div class="f"><label for="pd" data-i="lP">Feed</label><select id="pd"><option>Kailash Kapasiya Khol (44.5 KG)</option><option>Shivdhara Pashu Aahar (35 KG)</option><option>Balaji Pashu Aahar (40 KG)</option><option>Kailash Special Feed (30 KG)</option></select></div>
-  <div><label for="q" data-i="lQ">Bags</label><div class="qty"><button type="button" id="mi" aria-label="Less">−</button><input id="q" type="number" min="1" value="10" inputmode="numeric"><button type="button" id="pl" aria-label="More">+</button></div></div>
-  <div><label for="fc" data-i="lF">Send to</label><select id="fc"><option value="919426756662">Gondal – Maheshbhai</option><option value="919638158270">Amreli – Kuldipbhai</option><option value="919427745336">Amreli – Ajaybhai</option></select></div>
-  <div><label for="nm" data-i="lN">Your name</label><input id="nm" required autocomplete="name"></div>
-  <div><label for="vl" data-i="lV">Village / city</label><input id="vl" required autocomplete="address-level2"></div>
-  <div class="f"><label for="ph" data-i="lPh">Phone (optional)</label><input id="ph" type="tel" autocomplete="tel" inputmode="tel"></div>
-  <div class="f tot" id="tot"></div>
-  <button class="btn wa f" type="submit"><i class="fab fa-whatsapp"></i><span data-i="bSend">Send order on WhatsApp</span></button>
- </form>
-</div></section>
+  <!-- Products Section -->
+  <section class="sec" id="products">
+    <div class="wrap">
+      <h2 class="h2" data-i="pT">Feed for every herd</h2>
+      <p class="lead" data-i="pS">Four formulas. Pick one and order in under a minute.</p>
+      
+      <div class="pgrid">
+        <!-- Product 1 -->
+        <article class="card">
+          <div class="pimg">
+            <!-- Replace with your actual khol.jpeg URL -->
+            <img src="https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Kailash Kapasiya Khol">
+            <b>44.5 KG</b>
+          </div>
+          <h3>Kailash Kapasiya Khol</h3>
+          <p class="pt" data-i="d1">Rich in minerals and energy for maximum milk yield.</p>
+          <div class="meta"><span>22% <span data-i="pr">Protein</span></span></div>
+          <button class="btn g" data-p="Kailash Kapasiya Khol (44.5 KG)"><i class="fas fa-cart-plus"></i><span data-i="bAdd">Order this</span></button>
+        </article>
+        
+        <!-- Product 2 -->
+        <article class="card">
+          <div class="pimg">
+            <img src="https://images.pexels.com/photos/1405926/pexels-photo-1405926.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Shivdhara Pashu Aahar">
+            <b>35 KG</b>
+          </div>
+          <h3>Shivdhara Pashu Aahar</h3>
+          <p class="pt" data-i="d2">Improves fat and SNF, lifts daily milk yield.</p>
+          <div class="meta"><span>20% <span data-i="pr">Protein</span></span></div>
+          <button class="btn g" data-p="Shivdhara Pashu Aahar (35 KG)"><i class="fas fa-cart-plus"></i><span data-i="bAdd">Order this</span></button>
+        </article>
 
-<footer><b>Kailash Kapasiya Khol</b><span data-i="ft">© 2026 · Amreli & Gondal, Gujarat · Trusted by farmers for high-protein feed</span></footer>
+        <!-- Product 3 -->
+        <article class="card">
+          <div class="pimg">
+            <img src="https://images.pexels.com/photos/97533/pexels-photo-97533.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Balaji Pashu Aahar">
+            <b>40 KG</b>
+          </div>
+          <h3>Balaji Pashu Aahar</h3>
+          <p class="pt" data-i="d3">Easy to digest, with vitamins for strong immunity.</p>
+          <div class="meta"><span>18% <span data-i="pr">Protein</span></span></div>
+          <button class="btn g" data-p="Balaji Pashu Aahar (40 KG)"><i class="fas fa-cart-plus"></i><span data-i="bAdd">Order this</span></button>
+        </article>
+
+        <!-- Product 4 -->
+        <article class="card">
+          <div class="pimg">
+            <img src="https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Kailash Special Feed">
+            <b>30 KG</b>
+          </div>
+          <h3>Kailash Special Feed</h3>
+          <p class="pt" data-i="d4">Balanced premium formula with added minerals.</p>
+          <div class="meta"><span>24% <span data-i="pr">Protein</span></span></div>
+          <button class="btn g" data-p="Kailash Special Feed (30 KG)"><i class="fas fa-cart-plus"></i><span data-i="bAdd">Order this</span></button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us Section -->
+  <section class="sec dark" id="why">
+    <div class="wrap">
+      <h2 class="h2" data-i="wT">Built for dairy farmers</h2>
+      <p class="lead" data-i="wS">Every bag is tested for nutrition before it leaves the factory.</p>
+      <div class="why">
+        <div><i class="fas fa-chart-line"></i><h3 data-i="w1">More milk</h3><p data-i="w1d">10–15% higher yield with regular feeding.</p></div>
+        <div><i class="fas fa-heart-pulse"></i><h3 data-i="w2">Healthier cattle</h3><p data-i="w2d">Nutrients for stronger immunity.</p></div>
+        <div><i class="fas fa-percent"></i><h3 data-i="w3">Better fat & SNF</h3><p data-i="w3d">Higher milk quality, better price per litre.</p></div>
+        <div><i class="fas fa-leaf"></i><h3 data-i="w4">Natural grains</h3><p data-i="w4d">Made from quality grains and cotton seed.</p></div>
+      </div>
+      <div class="stats" id="stats">
+        <div><h2 data-c="872" data-s="+">872+</h2><p data-i="s1">Happy farmers</p></div>
+        <div><h2 data-c="2450" data-s="+">2450+</h2><p data-i="s2">Orders delivered</p></div>
+        <div><h2 data-c="14" data-s="+">14+</h2><p data-i="s3">Years of experience</p></div>
+        <div><h2 data-c="3850" data-s="+">3850+</h2><p data-i="s4">Tonnes supplied</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Factories Section -->
+  <section class="sec" id="factories">
+    <div class="wrap">
+      <h2 class="h2" data-i="fT">Visit our factories</h2>
+      <p class="lead" data-i="fS">Two units in Gujarat. Tap a photo to enlarge it.</p>
+      <div class="fgrid">
+        <!-- Amreli -->
+        <article class="card fac">
+          <button class="shot" data-z="https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=800" aria-label="Enlarge">
+            <img src="https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Amreli factory">
+          </button>
+          <div class="fb">
+            <h3 data-i="a1">Amreli factory</h3>
+            <div class="row"><i class="fas fa-location-dot"></i><span data-i="a1a">Next to Shrinathji Chamber, Lathi Road, Amreli</span></div>
+            <div class="row"><i class="fas fa-phone"></i><span>Kuldipbhai <br><a href="tel:+919638158270">96381 58270</a></span></div>
+            <div class="btns">
+              <a class="btn g" href="tel:+919638158270"><i class="fas fa-phone"></i><span data-i="bCall">Call</span></a>
+              <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Shrinathji+Chamber+Lathi+Road+Amreli"><i class="fas fa-location-arrow"></i><span data-i="bDir">Directions</span></a>
+            </div>
+          </div>
+        </article>
+        
+        <!-- Gondal -->
+        <article class="card fac">
+          <button class="shot" data-z="https://images.pexels.com/photos/1405926/pexels-photo-1405926.jpeg?auto=compress&cs=tinysrgb&w=800" aria-label="Enlarge">
+            <img src="https://images.pexels.com/photos/1405926/pexels-photo-1405926.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Gondal factory">
+          </button>
+          <div class="fb">
+            <h3 data-i="g1">Gondal factory</h3>
+            <div class="row"><i class="fas fa-location-dot"></i><span data-i="g1a">Plot 32, Vraj Industries-1, Anida Road, Gundala, Gondal</span></div>
+            <div class="row"><i class="fas fa-phone"></i><span>Maheshbhai <br><a href="tel:+919426756662">94267 56662</a></span></div>
+            <div class="btns">
+              <a class="btn g" href="tel:+919426756662"><i class="fas fa-phone"></i><span data-i="bCall">Call</span></a>
+              <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Vraj+Industries+Anida+Road+Gundala+Gondal"><i class="fas fa-location-arrow"></i><span data-i="bDir">Directions</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order Section -->
+  <section class="sec" id="order" style="padding-top:0">
+    <div class="wrap order">
+      <div>
+        <h2 class="h2" data-i="oT">Order in 3 steps</h2>
+        <p class="lead" data-i="oS">Your order goes straight to the factory on WhatsApp. No sign-up needed.</p>
+        <ul class="steps">
+          <li><span>1</span><b data-i="o1">Choose feed and bags</b></li>
+          <li><span>2</span><b data-i="o2">Add your name and village</b></li>
+          <li><span>3</span><b data-i="o3">Send on WhatsApp – we confirm the price</b></li>
+        </ul>
+      </div>
+      
+      <form class="form" id="of">
+        <div class="f">
+          <label for="pd" data-i="lP">Feed</label>
+          <select id="pd">
+            <option>Kailash Kapasiya Khol (44.5 KG)</option>
+            <option>Shivdhara Pashu Aahar (35 KG)</option>
+            <option>Balaji Pashu Aahar (40 KG)</option>
+            <option>Kailash Special Feed (30 KG)</option>
+          </select>
+        </div>
+        <div>
+          <label for="q" data-i="lQ">Bags</label>
+          <div class="qty">
+            <button type="button" id="mi" aria-label="Less">−</button>
+            <input id="q" type="number" min="1" value="10" inputmode="numeric">
+            <button type="button" id="pl" aria-label="More">+</button>
+          </div>
+        </div>
+        <div>
+          <label for="fc" data-i="lF">Send to</label>
+          <select id="fc">
+            <option value="919426756662">Gondal – Maheshbhai</option>
+            <option value="919638158270">Amreli – Kuldipbhai</option>
+          </select>
+        </div>
+        <div>
+          <label for="nm" data-i="lN">Your name</label>
+          <input id="nm" required autocomplete="name" placeholder="e.g. Ramesh Patel">
+        </div>
+        <div>
+          <label for="vl" data-i="lV">Village / city</label>
+          <input id="vl" required autocomplete="address-level2" placeholder="e.g. Amreli">
+        </div>
+        <div class="f">
+          <label for="ph" data-i="lPh">Phone (optional)</label>
+          <input id="ph" type="tel" autocomplete="tel" inputmode="tel" placeholder="e.g. 98765 43210">
+        </div>
+        <div class="f tot" id="tot"></div>
+        <button class="btn wa f" type="submit"><i class="fab fa-whatsapp"></i><span data-i="bSend">Send order on WhatsApp</span></button>
+      </form>
+    </div>
+  </section>
 </main>
 
-<div class="fab"><a class="w" href="https://wa.me/919426756662" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a><a href="tel:+919638158270" aria-label="Call"><i class="fas fa-phone"></i></a><button class="t" id="top" aria-label="Top"><i class="fas fa-arrow-up"></i></button></div>
-<div class="lb" id="lb"><button aria-label="Close">✕</button><img alt=""></div>
+<footer>
+  <b>Kailash Kapasiya Khol</b>
+  <span data-i="ft">© 2026 · Amreli & Gondal, Gujarat · Trusted by farmers for high-protein feed</span>
+</footer>
+
+<!-- Floating Buttons -->
+<div class="fab">
+  <a class="w" href="https://wa.me/919426756662" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="tel:+919638158270" aria-label="Call"><i class="fas fa-phone"></i></a>
+  <button class="t" id="top" aria-label="Back to Top"><i class="fas fa-arrow-up"></i></button>
+</div>
+
+<!-- Lightbox -->
+<div class="lb" id="lb">
+  <button aria-label="Close">✕</button>
+  <img alt="Enlarged view">
+</div>
 
 <script>
-const T={
-en:{nP:"Products",nW:"Why us",nF:"Factories",nO:"Order",h1:"Better feed.",h2:"More milk.",hp:"High-protein cattle feed made in Amreli & Gondal. Order straight from the factory.",bOrder:"Order now",bView:"View products",t1:"2 factories in Gujarat",t2:"Up to 24% protein",t3:"Delivery across Gujarat",t4:"Talk to the factory directly",pT:"Feed for every herd",pS:"Four formulas. Pick one and order in under a minute.",d1:"Rich in minerals and energy for maximum milk yield.",d2:"Improves fat and SNF, lifts daily milk yield.",d3:"Easy to digest, with vitamins for strong immunity.",d4:"Balanced premium formula with added minerals.",pr:"Protein",bAdd:"Order this",wT:"Built for dairy farmers",wS:"Every bag is tested for nutrition before it leaves the factory.",w1:"More milk",w1d:"10–15% higher yield with regular feeding.",w2:"Healthier cattle",w2d:"Nutrients for stronger immunity.",w3:"Better fat & SNF",w3d:"Higher milk quality, better price per litre.",w4:"Natural grains",w4d:"Made from quality grains and cotton seed.",s1:"Happy farmers",s2:"Orders delivered",s3:"Years of experience",s4:"Tonnes supplied",fT:"Visit our factories",fS:"Two units in Gujarat. Tap a photo to enlarge it.",a1:"Amreli factory",a1a:"Next to Shrinathji Chamber, Lathi Road, Amreli",g1:"Gondal factory",g1a:"Plot 32, Vraj Industries-1, Anida Road, Gundala, Gondal",bCall:"Call",bDir:"Directions",oT:"Order in 3 steps",oS:"Your order goes straight to the factory on WhatsApp. No sign-up.",o1:"Choose feed and bags",o2:"Add your name and village",o3:"Send on WhatsApp – we confirm the price",lP:"Feed",lQ:"Bags",lF:"Send to",lN:"Your name",lV:"Village / city",lPh:"Phone (optional)",bSend:"Send order on WhatsApp",ft:"© 2026 · Amreli & Gondal, Gujarat · Trusted by farmers for high-protein feed",tot:"Total: {n} bags · {kg} KG (price confirmed on WhatsApp)",msg:"Hello, I want to order:"},
-hi:{nP:"उत्पाद",nW:"क्यों हम",nF:"फैक्ट्री",nO:"ऑर्डर",h1:"बेहतर आहार।",h2:"ज़्यादा दूध।",hp:"अमरेली और गोंडल में बना उच्च प्रोटीन पशु आहार। सीधे फैक्ट्री से ऑर्डर करें।",bOrder:"अभी ऑर्डर करें",bView:"उत्पाद देखें",t1:"गुजरात में 2 फैक्ट्री",t2:"24% तक प्रोटीन",t3:"पूरे गुजरात में डिलीवरी",t4:"फैक्ट्री से सीधी बात",pT:"हर पशुपालक के लिए आहार",pS:"चार फॉर्मूले। चुनें और एक मिनट में ऑर्डर करें।",d1:"खनिज और ऊर्जा से भरपूर, अधिकतम दूध के लिए।",d2:"फैट और SNF बढ़ाए, रोज़ का दूध बढ़ाए।",d3:"आसानी से पचने वाला, मज़बूत प्रतिरक्षा के लिए विटामिन।",d4:"अतिरिक्त खनिजों के साथ संतुलित प्रीमियम फॉर्मूला।",pr:"प्रोटीन",bAdd:"ऑर्डर करें",wT:"डेयरी किसानों के लिए बना",wS:"हर बैग फैक्ट्री से निकलने से पहले जांचा जाता है।",w1:"ज़्यादा दूध",w1d:"नियमित खिलाने पर 10–15% अधिक उत्पादन।",w2:"स्वस्थ पशु",w2d:"मज़बूत प्रतिरक्षा के लिए पोषक तत्व।",w3:"बेहतर फैट और SNF",w3d:"बेहतर गुणवत्ता, प्रति लीटर बेहतर दाम।",w4:"प्राकृतिक अनाज",w4d:"गुणवत्ता वाले अनाज और कपास बीज से बना।",s1:"खुश किसान",s2:"ऑर्डर डिलीवर",s3:"वर्षों का अनुभव",s4:"टन आपूर्ति",fT:"हमारी फैक्ट्री",fS:"गुजरात में दो यूनिट। बड़ा देखने के लिए फोटो पर टैप करें।",a1:"अमरेली फैक्ट्री",a1a:"श्रीनाथजी चेम्बर के बगल में, लाठी रोड, अमरेली",g1:"गोंडल फैक्ट्री",g1a:"प्लॉट 32, वज्र इंडस्ट्रीज-1, अनीडा रोड, गुंदाला, गोंडल",bCall:"कॉल",bDir:"रास्ता",oT:"3 स्टेप में ऑर्डर",oS:"आपका ऑर्डर WhatsApp पर सीधे फैक्ट्री जाता है। साइन-अप नहीं।",o1:"आहार और बैग चुनें",o2:"नाम और गांव लिखें",o3:"WhatsApp पर भेजें – हम भाव बताएंगे",lP:"आहार",lQ:"बैग",lF:"किसे भेजें",lN:"आपका नाम",lV:"गांव / शहर",lPh:"फोन (वैकल्पिक)",bSend:"WhatsApp पर ऑर्डर भेजें",ft:"© 2026 · अमरेली और गोंडल, गुजरात · किसानों का भरोसेमंद उच्च प्रोटीन आहार",tot:"कुल: {n} बैग · {kg} किलो (भाव WhatsApp पर बताया जाएगा)",msg:"नमस्ते, मुझे ऑर्डर करना है:"},
-gu:{nP:"ઉત્પાદનો",nW:"કેમ અમે",nF:"ફેક્ટરી",nO:"ઓર્ડર",h1:"વધુ સારો આહાર.",h2:"વધુ દૂધ.",hp:"અમરેલી અને ગોંડલમાં બનેલો ઉચ્ચ પ્રોટીન પશુ આહાર. સીધો ફેક્ટરીથી ઓર્ડર કરો.",bOrder:"હમણાં ઓર્ડર કરો",bView:"ઉત્પાદનો જુઓ",t1:"ગુજરાતમાં 2 ફેક્ટરી",t2:"24% સુધી પ્રોટીન",t3:"આખા ગુજરાતમાં ડિલિવરી",t4:"ફેક્ટરી સાથે સીધી વાત",pT:"દરેક પશુપાલક માટે આહાર",pS:"ચાર ફોર્મ્યુલા. પસંદ કરો અને એક મિનિટમાં ઓર્ડર કરો.",d1:"ખનિજ અને ઊર્જાથી ભરપૂર, વધુ દૂધ માટે.",d2:"ફેટ અને SNF સુધારે, રોજનું દૂધ વધારે.",d3:"સહેલાઈથી પચે, મજબૂત રોગપ્રતિકારક શક્તિ માટે વિટામિન.",d4:"વધારાના ખનિજો સાથે સંતુલિત પ્રીમિયમ ફોર્મ્યુલા.",pr:"પ્રોટીન",bAdd:"ઓર્ડર કરો",wT:"ડેરી ખેડૂતો માટે બનાવેલ",wS:"દરેક બેગ ફેક્ટરીમાંથી નીકળતા પહેલાં તપાસાય છે.",w1:"વધુ દૂધ",w1d:"નિયમિત ખવડાવતાં 10–15% વધુ ઉત્પાદન.",w2:"તંદુરસ્ત પશુ",w2d:"મજબૂત રોગપ્રતિકારક શક્તિ માટે પોષક તત્વો.",w3:"વધુ ફેટ અને SNF",w3d:"સારી ગુણવત્તા, લિટર દીઠ સારો ભાવ.",w4:"કુદરતી અનાજ",w4d:"ગુણવત્તાવાળા અનાજ અને કપાસિયાથી બનેલ.",s1:"ખુશ ખેડૂતો",s2:"ઓર્ડર ડિલિવર",s3:"વર્ષનો અનુભવ",s4:"ટન સપ્લાય",fT:"અમારી ફેક્ટરી",fS:"ગુજરાતમાં બે યુનિટ. મોટું જોવા ફોટો પર ટેપ કરો.",a1:"અમરેલી ફેક્ટરી",a1a:"શ્રીનાથજી ચેમ્બર બાજુમાં, લાઠી રોડ, અમરેલી",g1:"ગોંડલ ફેક્ટરી",g1a:"પ્લોટ ૩૨, વજ ઇન્ડસ્ટ્રીઝ-૧, અનીડા રોડ, ગુંદાળા, ગોંડલ",bCall:"કૉલ",bDir:"રસ્તો",oT:"3 સ્ટેપમાં ઓર્ડર",oS:"તમારો ઓર્ડર WhatsApp પર સીધો ફેક્ટરીમાં જાય છે. સાઇન-અપ નહીં.",o1:"આહાર અને બેગ પસંદ કરો",o2:"નામ અને ગામ લખો",o3:"WhatsApp પર મોકલો – અમે ભાવ જણાવીશું",lP:"આહાર",lQ:"બેગ",lF:"કોને મોકલવું",lN:"તમારું નામ",lV:"ગામ / શહેર",lPh:"ફોન (વૈકલ્પિક)",bSend:"WhatsApp પર ઓર્ડર મોકલો",ft:"© 2026 · અમરેલી અને ગોંડલ, ગુજરાત · ખેડૂતોનો ભરોસાપાત્ર ઉચ્ચ પ્રોટીન આહાર",tot:"કુલ: {n} બેગ · {kg} કિલો (ભાવ WhatsApp પર જણાવાશે)",msg:"નમસ્તે, મારે ઓર્ડર કરવો છે:"}};
-const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-let L='en';try{L=localStorage.getItem('lang')||'en'}catch(e){}if(!T[L])L='en';
-const KG={0:44.5,1:35,2:40,3:30};
-function tot(){const n=Math.max(1,+$('#q').value||1),kg=n*KG[$('#pd').selectedIndex];$('#tot').textContent=T[L].tot.replace('{n}',n).replace('{kg}',kg)}
-function setL(l){L=l;$$('[data-i]').forEach(e=>{const v=T[l][e.dataset.i];if(v)e.textContent=v});$$('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));document.documentElement.lang=l;try{localStorage.setItem('lang',l)}catch(e){}tot()}
-$$('.lang button').forEach(b=>b.onclick=()=>setL(b.dataset.l));setL(L);
-// menu
-const menu=$('#menu'),bg=$('#burger');
-const cm=()=>{menu.classList.remove('open');bg.setAttribute('aria-expanded','false');bg.firstChild.className='fas fa-bars'};
-bg.onclick=()=>{const o=menu.classList.toggle('open');bg.setAttribute('aria-expanded',o);bg.firstChild.className=o?'fas fa-xmark':'fas fa-bars'};
-$$('.menu a.l').forEach(a=>a.onclick=cm);
-document.addEventListener('click',e=>{if(!e.target.closest('.nav'))cm()});
-// scroll: nav solid + top button
-const nav=$('#nav'),top=$('#top');let tick=false;
-function sc(){const y=scrollY;nav.classList.toggle('solid',y>80);top.classList.toggle('show',y>600);tick=false}
-addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(sc)}},{passive:true});sc();
-top.onclick=()=>scrollTo({top:0});
-// hero slides
-const hb=$$('.hbg');let hi=0;setInterval(()=>{hb[hi].classList.remove('on');hi=(hi+1)%hb.length;hb[hi].classList.add('on')},6000);
-// reveal
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
-$$('.rv').forEach((e,i)=>{e.style.transitionDelay=(i%4)*90+'ms';io.observe(e)});
-// counters
-function cnt(el){const end=+el.dataset.c,s=el.dataset.s,t0=performance.now();(function f(t){const p=Math.min((t-t0)/1700,1),v=Math.floor(end*(1-Math.pow(1-p,3)));el.textContent=v.toLocaleString('en-IN')+(p<1?'':s);if(p<1)requestAnimationFrame(f)})(t0)}
-new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){$$('[data-c]').forEach(cnt);o.disconnect()}},{threshold:.4}).observe($('#stats'));
-// lightbox
-const lb=$('#lb'),li=lb.querySelector('img');
-$$('[data-z]').forEach(b=>b.onclick=()=>{li.src=b.dataset.z;lb.classList.add('open')});
-lb.onclick=()=>lb.classList.remove('open');
-addEventListener('keydown',e=>{if(e.key==='Escape'){lb.classList.remove('open');cm()}});
-// order
-$$('[data-p]').forEach(b=>b.onclick=()=>{const s=$('#pd');[...s.options].forEach((o,i)=>{if(o.text===b.dataset.p)s.selectedIndex=i});tot();$('#order').scrollIntoView({behavior:'smooth'})});
-$('#pd').onchange=tot;$('#q').oninput=tot;
-$('#mi').onclick=()=>{$('#q').value=Math.max(1,(+$('#q').value||1)-1);tot()};
-$('#pl').onclick=()=>{$('#q').value=(+$('#q').value||0)+1;tot()};
-$('#of').addEventListener('submit',e=>{e.preventDefault();
- const n=Math.max(1,+$('#q').value||1),p=$('#pd').value,ph=$('#ph').value.trim();
- const m=`${T[L].msg}\n\n${p}\n${T.en.lQ}: ${n} (${n*KG[$('#pd').selectedIndex]} KG)\n${T.en.lN}: ${$('#nm').value.trim()}\n${T.en.lV}: ${$('#vl').value.trim()}${ph?'\nPhone: '+ph:''}`;
- window.open(`https://wa.me/${$('#fc').value}?text=${encodeURIComponent(m)}`,'_blank','noopener')});
+// Translations
+const T = {
+  en: {
+    nP: "Products", nW: "Why us", nF: "Factories", nO: "Order",
+    h1: "Better feed.", h2: "More milk.",
+    hp: "High-protein cattle feed made in Amreli & Gondal. Order straight from the factory.",
+    bOrder: "Order now", bView: "View products",
+    t1: "2 factories in Gujarat", t2: "Up to 24% protein", t3: "Delivery across Gujarat", t4: "Talk to factory directly",
+    pT: "Feed for every herd", pS: "Four formulas. Pick one and order in under a minute.",
+    d1: "Rich in minerals and energy for maximum milk yield.",
+    d2: "Improves fat and SNF, lifts daily milk yield.",
+    d3: "Easy to digest, with vitamins for strong immunity.",
+    d4: "Balanced premium formula with added minerals.",
+    pr: "Protein", bAdd: "Order this",
+    wT: "Built for dairy farmers", wS: "Every bag is tested for nutrition before it leaves the factory.",
+    w1: "More milk", w1d: "10–15% higher yield with regular feeding.",
+    w2: "Healthier cattle", w2d: "Nutrients for stronger immunity.",
+    w3: "Better fat & SNF", w3d: "Higher milk quality, better price per litre.",
+    w4: "Natural grains", w4d: "Made from quality grains and cotton seed.",
+    s1: "Happy farmers", s2: "Orders delivered", s3: "Years of experience", s4: "Tonnes supplied",
+    fT: "Visit our factories", fS: "Two units in Gujarat. Tap a photo to enlarge it.",
+    a1: "Amreli factory", a1a: "Next to Shrinathji Chamber, Lathi Road, Amreli",
+    g1: "Gondal factory", g1a: "Plot 32, Vraj Industries-1, Anida Road, Gundala, Gondal",
+    bCall: "Call", bDir: "Directions",
+    oT: "Order in 3 steps", oS: "Your order goes straight to the factory on WhatsApp. No sign-up.",
+    o1: "Choose feed and bags", o2: "Add your name and village", o3: "Send on WhatsApp – we confirm the price",
+    lP: "Feed", lQ: "Bags", lF: "Send to", lN: "Your name", lV: "Village / city", lPh: "Phone (optional)",
+    bSend: "Send order on WhatsApp",
+    ft: "© 2026 · Amreli & Gondal, Gujarat · Trusted by farmers for high-protein feed",
+    tot: "Total: {n} bags · {kg} KG (price confirmed on WhatsApp)",
+    msg: "Hello, I want to order:"
+  },
+  hi: {
+    nP: "उत्पाद", nW: "क्यों हम", nF: "फैक्ट्री", nO: "ऑर्डर",
+    h1: "बेहतर आहार।", h2: "ज़्यादा दूध।",
+    hp: "अमरेली और गोंडल में बना उच्च प्रोटीन पशु आहार। सीधे फैक्ट्री से ऑर्डर करें।",
+    bOrder: "अभी ऑर्डर करें", bView: "उत्पाद देखें",
+    t1: "गुजरात में 2 फैक्ट्री", t2: "24% तक प्रोटीन", t3: "पूरे गुजरात में डिलीवरी", t4: "फैक्ट्री से सीधी बात",
+    pT: "हर पशुपालक के लिए आहार", pS: "चार फॉर्मूले। चुनें और एक मिनट में ऑर्डर करें।",
+    d1: "खनिज और ऊर्जा से भरपूर, अधिकतम दूध के लिए।",
+    d2: "फैट और SNF बढ़ाए, रोज़ का दूध बढ़ाए।",
+    d3: "आसानी से पचने वाला, मज़बूत प्रतिरक्षा के लिए विटामिन।",
+    d4: "अतिरिक्त खनिजों के साथ संतुलित प्रीमियम फॉर्मूला।",
+    pr: "प्रोटीन", bAdd: "ऑर्डर करें",
+    wT: "डेयरी किसानों के लिए बना", wS: "हर बैग फैक्ट्री से निकलने से पहले जांचा जाता है।",
+    w1: "ज़्यादा दूध", w1d: "नियमित खिलाने पर 10–15% अधिक उत्पादन।",
+    w2: "स्वस्थ पशु", w2d: "मज़बूत प्रतिरक्षा के लिए पोषक तत्व।",
+    w3: "बेहतर फैट और SNF", w3d: "बेहतर गुणवत्ता, प्रति लीटर बेहतर दाम।",
+    w4: "प्राकृतिक अनाज", w4d: "गुणवत्ता वाले अनाज और कपास बीज से बना।",
+    s1: "खुश किसान", s2: "ऑर्डर डिलीवर", s3: "वर्षों का अनुभव", s4: "टन आपूर्ति",
+    fT: "हमारी फैक्ट्री", fS: "गुजरात में दो यूनिट। बड़ा देखने के लिए फोटो पर टैप करें।",
+    a1: "अमरेली फैक्ट्री", a1a: "श्रीनाथजी चेम्बर के बगल में, लाठी रोड, अमरेली",
+    g1: "गोंडल फैक्ट्री", g1a: "प्लॉट 32, वज्र इंडस्ट्रीज-1, अनीडा रोड, गुंदाला, गोंडल",
+    bCall: "कॉल", bDir: "रास्ता",
+    oT: "3 स्टेप में ऑर्डर", oS: "आपका ऑर्डर WhatsApp पर सीधे फैक्ट्री जाता है।",
+    o1: "आहार और बैग चुनें", o2: "नाम और गांव लिखें", o3: "WhatsApp पर भेजें – हम भाव बताएंगे",
+    lP: "आहार", lQ: "बैग", lF: "किसे भेजें", lN: "आपका नाम", lV: "गांव / शहर", lPh: "फोन (वैकल्पिक)",
+    bSend: "WhatsApp पर ऑर्डर भेजें",
+    ft: "© 2026 · अमरेली और गोंडल, गुजरात · किसानों का भरोसेमंद उच्च प्रोटीन आहार",
+    tot: "कुल: {n} बैग · {kg} किलो (भाव WhatsApp पर बताया जाएगा)",
+    msg: "नमस्ते, मुझे ऑर्डर करना है:"
+  },
+  gu: {
+    nP: "ઉત્પાદનો", nW: "કેમ અમે", nF: "ફેક્ટરી", nO: "ઓર્ડર",
+    h1: "વધુ સારો આહાર.", h2: "વધુ દૂધ.",
+    hp: "અમરેલી અને ગોંડલમાં બનેલો ઉચ્ચ પ્રોટીન પશુ આહાર. સીધો ફેક્ટરીથી ઓર્ડર કરો.",
+    bOrder: "હમણાં ઓર્ડર કરો", bView: "ઉત્પાદનો જુઓ",
+    t1: "ગુજરાતમાં 2 ફેક્ટરી", t2: "24% સુધી પ્રોટીન", t3: "આખા ગુજરાતમાં ડિલિવરી", t4: "ફેક્ટરી સાથે સીધી વાત",
+    pT: "દરેક પશુપાલક માટે આહાર", pS: "ચાર ફોર્મ્યુલા. પસંદ કરો અને એક મિનિટમાં ઓર્ડર કરો.",
+    d1: "ખનિજ અને ઊર્જાથી ભરપૂર, વધુ દૂધ માટે.",
+    d2: "ફેટ અને SNF સુધારે, રોજનું દૂધ વધારે.",
+    d3: "સહેલાઈથી પચે, મજબૂત રોગપ્રતિકારક શક્તિ માટે વિટામિન.",
+    d4: "વધારાના ખનિજો સાથે સંતુલિત પ્રીમિયમ ફોર્મ્યુલા.",
+    pr: "પ્રોટીન", bAdd: "ઓર્ડર કરો",
+    wT: "ડેરી ખેડૂતો માટે બનાવેલ", wS: "દરેક બેગ ફેક્ટરીમાંથી નીકળતા પહેલાં તપાસાય છે.",
+    w1: "વધુ દૂધ", w1d: "નિયમિત ખવડાવતાં 10–15% વધુ ઉત્પાદન.",
+    w2: "તંદુરસ્ત પશુ", w2d: "મજબૂત રોગપ્રતિકારક શક્તિ માટે પોષક તત્વો.",
+    w3: "વધુ ફેટ અને SNF", w3d: "સારી ગુણવત્તા, લિટર દીઠ સારો ભાવ.",
+    w4: "કુદરતી અનાજ", w4d: "ગુણવત્તાવાળા અનાજ અને કપાસિયાથી બનેલ.",
+    s1: "ખુશ ખેડૂતો", s2: "ઓર્ડર ડિલિવર", s3: "વર્ષનો અનુભવ", s4: "ટન સપ્લાય",
+    fT: "અમારી ફેક્ટરી", fS: "ગુજરાતમાં બે યુનિટ. મોટું જોવા ફોટો પર ટેપ કરો.",
+    a1: "અમરેલી ફેક્ટરી", a1a: "શ્રીનાથજી ચેમ્બર બાજુમાં, લાઠી રોડ, અમરેલી",
+    g1: "ગોંડલ ફેક્ટરી", g1a: "પ્લોટ ૩૨, વજ ઇન્ડસ્ટ્રીઝ-૧, અનીડા રોડ, ગુંદાળા, ગોંડલ",
+    bCall: "કૉલ", bDir: "રસ્તો",
+    oT: "3 સ્ટેપમાં ઓર્ડર", oS: "તમારો ઓર્ડર WhatsApp પર સીધો ફેક્ટરીમાં જાય છે.",
+    o1: "આહાર અને બેગ પસંદ કરો", o2: "નામ અને ગામ લખો", o3: "WhatsApp પર મોકલો – અમે ભાવ જણાવીશું",
+    lP: "આહાર", lQ: "બેગ", lF: "કોને મોકલવું", lN: "તમારું નામ", lV: "ગામ / શહેર", lPh: "ફોન (વૈકલ્પિક)",
+    bSend: "WhatsApp પર ઓર્ડર મોકલો",
+    ft: "© 2026 · અમરેલી અને ગોંડલ, ગુજરાત · ખેડૂતોનો ભરોસાપાત્ર ઉચ્ચ પ્રોટીન આહાર",
+    tot: "કુલ: {n} બેગ · {kg} કિલો (ભાવ WhatsApp પર જણાવાશે)",
+    msg: "નમસ્તે, મારે ઓર્ડર કરવો છે:"
+  }
+};
+
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+let L = 'en';
+try { L = localStorage.getItem('lang') || 'en'; } catch(e) {}
+if (!T[L]) L = 'en';
+
+// Package Weights
+const KG = { 0: 44.5, 1: 35, 2: 40, 3: 30 };
+
+// Update Total Display
+function updateTotal() {
+  const n = Math.max(1, +$('#q').value || 1);
+  const kg = n * KG[$('#pd').selectedIndex];
+  $('#tot').textContent = T[L].tot.replace('{n}', n).replace('{kg}', kg);
+}
+
+// Change Language
+function setLanguage(lang) {
+  L = lang;
+  $$('[data-i]').forEach(el => {
+    const val = T[lang][el.dataset.i];
+    if (val) el.textContent = val;
+  });
+  $$('.lang button').forEach(btn => btn.classList.toggle('on', btn.dataset.l === lang));
+  document.documentElement.lang = lang;
+  try { localStorage.setItem('lang', lang); } catch(e) {}
+  updateTotal();
+}
+
+$$('.lang button').forEach(btn => btn.onclick = () => setLanguage(btn.dataset.l));
+setLanguage(L);
+
+// Mobile Menu
+const menu = $('#menu'), burger = $('#burger');
+const closeMenu = () => {
+  menu.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+  burger.firstChild.className = 'fas fa-bars';
+};
+burger.onclick = () => {
+  const isOpen = menu.classList.toggle('open');
+  burger.setAttribute('aria-expanded', isOpen);
+  burger.firstChild.className = isOpen ? 'fas fa-xmark' : 'fas fa-bars';
+};
+$$('.menu a.l').forEach(a => a.onclick = closeMenu);
+document.addEventListener('click', e => { if (!e.target.closest('.nav')) closeMenu(); });
+
+// Navbar & Top Button on Scroll
+const nav = $('#nav'), topBtn = $('#top');
+let tick = false;
+function onScroll() {
+  const y = scrollY;
+  nav.classList.toggle('solid', y > 80);
+  topBtn.classList.toggle('show', y > 600);
+  tick = false;
+}
+addEventListener('scroll', () => {
+  if (!tick) { tick = true; requestAnimationFrame(onScroll); }
+}, { passive: true });
+onScroll();
+
+topBtn.onclick = () => scrollTo({ top: 0 });
+
+// Hero Slideshow
+const heroBgs = $$('.hbg');
+let heroIdx = 0;
+setInterval(() => {
+  heroBgs[heroIdx].classList.remove('on');
+  heroIdx = (heroIdx + 1) % heroBgs.length;
+  heroBgs[heroIdx].classList.add('on');
+}, 6000);
+
+// Counters
+function animateCounter(el) {
+  const target = +el.dataset.c;
+  const suffix = el.dataset.s;
+  const t0 = performance.now();
+  (function frame(t) {
+    const p = Math.min((t - t0) / 1700, 1);
+    const val = Math.floor(target * (1 - Math.pow(1 - p, 3)));
+    el.textContent = val.toLocaleString('en-IN') + (p < 1 ? '' : suffix);
+    if (p < 1) requestAnimationFrame(frame);
+  })(t0);
+}
+new IntersectionObserver((entries, obs) => {
+  if (entries[0].isIntersecting) {
+    $$('[data-c]').forEach(animateCounter);
+    obs.disconnect();
+  }
+}, { threshold: 0.3 }).observe($('#stats'));
+
+// Lightbox
+const lb = $('#lb'), lbImg = lb.querySelector('img');
+$$('[data-z]').forEach(btn => btn.onclick = () => {
+  lbImg.src = btn.dataset.z;
+  lb.classList.add('open');
+});
+lb.onclick = () => lb.classList.remove('open');
+addEventListener('keydown', e => {
+  if (e.key === 'Escape') { lb.classList.remove('open'); closeMenu(); }
+});
+
+// Order Buttons "Order This"
+$$('[data-p]').forEach(btn => btn.onclick = () => {
+  const select = $('#pd');
+  [...select.options].forEach((opt, i) => {
+    if (opt.text === btn.dataset.p) select.selectedIndex = i;
+  });
+  updateTotal();
+  $('#order').scrollIntoView({ behavior: 'smooth' });
+});
+
+// Qty & Product Change Listeners
+$('#pd').onchange = updateTotal;
+$('#q').oninput = updateTotal;
+$('#mi').onclick = () => { $('#q').value = Math.max(1, (+$('#q').value || 1) - 1); updateTotal(); };
+$('#pl').onclick = () => { $('#q').value = (+$('#q').value || 0) + 1; updateTotal(); };
+
+// Submit Form (Open WhatsApp)
+$('#of').addEventListener('submit', e => {
+  e.preventDefault();
+  const n = Math.max(1, +$('#q').value || 1);
+  const product = $('#pd').value;
+  const phone = $('#ph').value.trim();
+  
+  // Build the message
+  const msg = `${T[L].msg}\n\n${product}\n${T.en.lQ}: ${n} (${n * KG[$('#pd').selectedIndex]} KG)\n${T.en.lN}: ${$('#nm').value.trim()}\n${T.en.lV}: ${$('#vl').value.trim()}${phone ? '\nPhone: ' + phone : ''}`;
+  
+  // Open WhatsApp
+  window.open(`https://wa.me/${$('#fc').value}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+});
 </script>
 </body>
 </html>
