@@ -97,7 +97,7 @@ section{padding:clamp(3rem,8vw,6rem) 0}
 .nav.solid .burger{color:var(--g)}
 
 /* =========================================
-   HERO
+   HERO (Cow/Buffalo & Feed themed)
    ========================================= */
 .hero{
   min-height:100vh;min-height:100svh;
@@ -113,10 +113,21 @@ section{padding:clamp(3rem,8vw,6rem) 0}
 }
 .hero-bg.active{opacity:1;z-index:1;animation:kenBurns 20s infinite alternate}
 @keyframes kenBurns{0%{transform:scale(1.05)}100%{transform:scale(1.15)}}
-.hero-bg:nth-child(1){background-image:linear-gradient(120deg,rgba(0,20,5,.8),rgba(15,40,10,.85)),url('https://images.pexels.com/photos/1405926/pexels-photo-1405926.jpeg?auto=compress&cs=tinysrgb&w=1600')}
-.hero-bg:nth-child(2){background-image:linear-gradient(120deg,rgba(0,20,5,.8),rgba(15,40,10,.85)),url('https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=1600')}
-.hero-bg:nth-child(3){background-image:linear-gradient(120deg,rgba(0,20,5,.8),rgba(15,40,10,.85)),url('https://images.pexels.com/photos/7750322/pexels-photo-7750322.jpeg?auto=compress&cs=tinysrgb&w=1600')}
-.hero-bg:nth-child(4){background-image:linear-gradient(120deg,rgba(0,20,5,.8),rgba(15,40,10,.85)),url('https://images.pexels.com/photos/97533/pexels-photo-97533.jpeg?auto=compress&cs=tinysrgb&w=1600')}
+
+/* 100% Cow / Buffalo / Feed images */
+.hero-bg:nth-child(1){
+  background-image:linear-gradient(120deg,rgba(0,20,5,.8),rgba(15,40,10,.85)),url('https://images.pexels.com/photos/1383281/pexels-photo-1383281.jpeg?auto=compress&cs=tinysrgb&w=1600');
+}
+.hero-bg:nth-child(2){
+  background-image:linear-gradient(120deg,rgba(0,20,5,.8),rgba(15,40,10,.85)),url('https://images.pexels.com/photos/1431326/pexels-photo-1431326.jpeg?auto=compress&cs=tinysrgb&w=1600');
+}
+.hero-bg:nth-child(3){
+  background-image:linear-gradient(120deg,rgba(0,20,5,.8),rgba(15,40,10,.85)),url('https://images.pexels.com/photos/1301885/pexels-photo-1301885.jpeg?auto=compress&cs=tinysrgb&w=1600');
+}
+.hero-bg:nth-child(4){
+  background-image:linear-gradient(120deg,rgba(0,20,5,.8),rgba(15,40,10,.85)),url('https://images.pexels.com/photos/2255459/pexels-photo-2255459.jpeg?auto=compress&cs=tinysrgb&w=1600');
+}
+
 .hero-box{
   position:relative;z-index:2;max-width:900px;margin:0 auto;width:100%;
   background:rgba(10,30,10,.45);
@@ -370,29 +381,48 @@ footer small{opacity:.8;font-size:.9rem}
   <h2 class="title" data-key="productsTitle">🐄 Our Complete Range</h2>
   <p class="sub" data-key="productsHeroSub">Scientifically formulated for maximum milk yield and animal health</p>
   <div class="grid g4">
+   <!-- Product 1 -->
    <article class="card prod">
-     <div class="pimg"><img src="khol.jpeg" alt="Kailash Kapasiya Khol" loading="lazy"></div>
+     <div class="pimg">
+       <!-- Cow eating feed -->
+       <img src="https://images.pexels.com/photos/1431326/pexels-photo-1431326.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Kailash Kapasiya Khol" loading="lazy">
+     </div>
      <h3 data-key="prod1Name">Kailash Kapasiya Khol</h3>
      <span class="tag" data-key="prod1Tag"></span>
      <p data-key="prod1Desc"></p>
      <div class="specs"><span><i class="fas fa-weight-hanging"></i>44.5 KG</span><span><i class="fas fa-chart-line"></i>22% <b data-key="protein">Protein</b></span></div>
    </article>
+   
+   <!-- Product 2 -->
    <article class="card prod">
-     <div class="pimg"><img src="shivdhara.jpeg" alt="Shivdhara Pashu Aahar" loading="lazy"></div>
+     <div class="pimg">
+       <!-- Buffalo feeding -->
+       <img src="https://images.pexels.com/photos/1301885/pexels-photo-1301885.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Shivdhara Pashu Aahar" loading="lazy">
+     </div>
      <h3 data-key="prod2Name"></h3>
      <span class="tag" data-key="prod2Tag"></span>
      <p data-key="prod2Desc"></p>
      <div class="specs"><span><i class="fas fa-weight-hanging"></i>35 KG</span><span><i class="fas fa-chart-line"></i>20% <b data-key="protein">Protein</b></span></div>
    </article>
+   
+   <!-- Product 3 -->
    <article class="card prod">
-     <div class="pimg"><img src="balaji.jpeg" alt="Balaji Pashu Aahar" loading="lazy"></div>
+     <div class="pimg">
+       <!-- Cattle feed raw material -->
+       <img src="https://images.pexels.com/photos/2255459/pexels-photo-2255459.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Balaji Pashu Aahar" loading="lazy">
+     </div>
      <h3 data-key="prod3Name"></h3>
      <span class="tag" data-key="prod3Tag"></span>
      <p data-key="prod3Desc"></p>
      <div class="specs"><span><i class="fas fa-weight-hanging"></i>40 KG</span><span><i class="fas fa-chart-line"></i>18% <b data-key="protein">Protein</b></span></div>
    </article>
+   
+   <!-- Product 4 -->
    <article class="card prod">
-     <div class="pimg"><img src="makaybhushu.jpeg" alt="Kailash Special Feed" loading="lazy"></div>
+     <div class="pimg">
+       <!-- Cow in field -->
+       <img src="https://images.pexels.com/photos/1383281/pexels-photo-1383281.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Kailash Special Feed" loading="lazy">
+     </div>
      <h3 data-key="prod4Name"></h3>
      <span class="tag" data-key="prod4Tag"></span>
      <p data-key="prod4Desc"></p>
@@ -483,7 +513,9 @@ footer small{opacity:.8;font-size:.9rem}
   <div class="grid g2">
    <!-- AMRELI -->
    <article class="card fac">
-    <button class="shot" data-zoom="card_shiv_amreli.jpg" aria-label="View card"><img src="card_shiv_amreli.jpg" alt="Amreli card" loading="lazy"></button>
+    <button class="shot" data-zoom="card_shiv_amreli.jpg" aria-label="View card">
+      <img src="card_shiv_amreli.jpg" alt="Amreli card" loading="lazy">
+    </button>
     <div class="body">
      <span class="badge" data-key="fac1Badge">Amreli Factory</span>
      <h3 data-key="fac1Name">Kailash Kapasiya Khol – Amreli</h3>
@@ -497,7 +529,9 @@ footer small{opacity:.8;font-size:.9rem}
    </article>
    <!-- GONDAL -->
    <article class="card fac">
-    <button class="shot" data-zoom="card_kailash_gondal.jpg" aria-label="View card"><img src="card_kailash_gondal.jpg" alt="Gondal card" loading="lazy"></button>
+    <button class="shot" data-zoom="card_kailash_gondal.jpg" aria-label="View card">
+      <img src="card_kailash_gondal.jpg" alt="Gondal card" loading="lazy">
+    </button>
     <div class="body">
      <span class="badge" data-key="fac2Badge">Gondal Factory</span>
      <h3 data-key="fac2Name">Kailash Kapasiya Khol – Gondal</h3>
