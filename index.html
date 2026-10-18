@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Shiv Industries – premium cattle feed (Kailash Kapasiya Khol) from Amreli & Gondal, Gujarat.">
+<meta name="description" content="Kailash Kapasiya Khol – premium cattle feed from Amreli & Gondal, Gujarat.">
 <meta name="theme-color" content="#0c2b1a">
-<title>Shiv Industries | Premium Cattle Feed - Amreli, Gujarat</title>
+<title>Kailash Kapasiya Khol | Premium Cattle Feed - Amreli & Gondal, Gujarat</title>
 <link rel="icon" href="shiv-logo.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Gujarati:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
@@ -74,19 +74,33 @@ section{padding:clamp(2.8rem,8vw,6rem) 0}
 .lang button:hover:not(.on){background:var(--y);color:#1a2e1a}
 .burger{display:none;background:none;border:0;font-size:1.6rem;color:var(--g);cursor:pointer;width:46px;height:46px;transition:transform .2s}
 .burger:hover{transform:scale(1.1)}
-/* hero */
+/* hero – SLIDING COW/BUFFALO BACKGROUND */
 .hero{
-  min-height:calc(90vh - var(--nav));min-height:calc(90svh - var(--nav));
+  min-height:calc(92vh - var(--nav));min-height:calc(92svh - var(--nav));
   display:flex;align-items:center;justify-content:center;text-align:center;
   padding:2rem 0;position:relative;overflow:hidden;
-  background:linear-gradient(120deg, rgba(0,20,5,.65), rgba(15,40,10,.75)),url('https://images.pexels.com/photos/7750322/pexels-photo-7750322.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover, #1a3a1a;
+  background:#0a2010;
 }
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 40%, rgba(245,184,27,.15), transparent 70%);pointer-events:none;animation:heroGlow 8s infinite alternate}
-@keyframes heroGlow{0%{opacity:.3;transform:scale(1)}100%{opacity:.8;transform:scale(1.2)}}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background-size:cover;background-position:center;
+  opacity:0;transition:opacity 1.8s ease-in-out;
+  transform:scale(1.08);
+  animation:kenBurns 20s infinite alternate;
+}
+.hero-bg.active{opacity:1;z-index:1}
+@keyframes kenBurns{
+  0%{transform:scale(1.08) translate(0,0)}
+  100%{transform:scale(1.18) translate(-1%,-1%)}
+}
+.hero-bg:nth-child(1){background-image:linear-gradient(120deg,rgba(0,20,5,.7),rgba(15,40,10,.78)),url('https://images.pexels.com/photos/7750322/pexels-photo-7750322.jpeg?auto=compress&cs=tinysrgb&w=1600')}
+.hero-bg:nth-child(2){background-image:linear-gradient(120deg,rgba(0,20,5,.7),rgba(15,40,10,.78)),url('https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=1600')}
+.hero-bg:nth-child(3){background-image:linear-gradient(120deg,rgba(0,20,5,.7),rgba(15,40,10,.78)),url('https://images.pexels.com/photos/1405926/pexels-photo-1405926.jpeg?auto=compress&cs=tinysrgb&w=1600')}
+.hero-bg:nth-child(4){background-image:linear-gradient(120deg,rgba(0,20,5,.7),rgba(15,40,10,.78)),url('https://images.pexels.com/photos/97533/pexels-photo-97533.jpeg?auto=compress&cs=tinysrgb&w=1600')}
 .hero-box{
-  position:relative;max-width:900px;margin:0 1rem;
-  background:rgba(10,30,10,.55);
-  backdrop-filter:blur(8px);
+  position:relative;z-index:2;max-width:900px;margin:0 1rem;
+  background:rgba(10,30,10,.5);
+  backdrop-filter:blur(10px);
   padding:clamp(1.8rem,5.5vw,3.5rem);
   border-radius:clamp(32px,7vw,64px);
   border:1px solid rgba(245,184,27,.5);
@@ -178,6 +192,37 @@ section{padding:clamp(2.8rem,8vw,6rem) 0}
 .row a:hover{color:#b87d00}
 .fac .btns{justify-content:flex-start;margin-top:auto;padding-top:.7rem;gap:.6rem}
 .fac .btn{font-size:.88rem;padding:.7rem 1.3rem;min-height:44px;box-shadow:0 4px 10px rgba(0,0,0,.1)}
+/* contact location cards */
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.2rem}
+.loc-card{
+  background:linear-gradient(135deg,#f0f9f0,#e8f5e8);
+  border-radius:18px;padding:1.1rem 1.2rem;
+  border-left:5px solid var(--g);
+  transition:transform .3s, box-shadow .3s;
+  display:flex;flex-direction:column;gap:.5rem;
+}
+.loc-card:hover{transform:translateY(-4px);box-shadow:0 12px 24px -8px rgba(15,118,61,.3)}
+.loc-card h4{font-size:1rem;font-weight:800;color:#0b3b1b;display:flex;align-items:center;gap:.4rem}
+.loc-card h4 i{color:var(--y);font-size:1.1rem}
+.loc-card .addr{font-size:.85rem;color:#3f5545;line-height:1.5}
+.loc-card .nums{display:flex;flex-wrap:wrap;gap:.4rem;margin:.2rem 0}
+.loc-card .nums a{
+  display:inline-flex;align-items:center;gap:.3rem;
+  background:#fff;color:var(--g);font-size:.78rem;font-weight:700;
+  padding:.3rem .7rem;border-radius:20px;text-decoration:none;
+  border:1px solid rgba(15,118,61,.2);
+  transition:background .2s, color .2s, transform .2s;
+}
+.loc-card .nums a:hover{background:var(--g);color:#fff;transform:scale(1.05)}
+.loc-card .btn-sm{
+  margin-top:.3rem;align-self:flex-start;
+  display:inline-flex;align-items:center;gap:.4rem;
+  background:linear-gradient(135deg,var(--y),var(--y2));color:#1e3a1e;
+  font-size:.8rem;font-weight:800;padding:.5rem 1rem;border-radius:30px;
+  text-decoration:none;transition:transform .2s, box-shadow .2s;
+  box-shadow:0 4px 10px rgba(245,184,27,.3);
+}
+.loc-card .btn-sm:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 8px 16px rgba(245,184,27,.5)}
 /* cta */
 .cta{
   background:linear-gradient(135deg,#0a4a1e,#0f763d,#1a9e4b);
@@ -284,6 +329,7 @@ footer p{position:relative;font-weight:500}
  .lang button{flex:1;padding:.6rem}
  .g3{grid-template-columns:repeat(2,1fr)}
  .contact{grid-template-columns:1fr}
+ .loc-grid{grid-template-columns:1fr}
 }
 @media(max-width:640px){
  .g4,.g3,.g2{grid-template-columns:1fr}
@@ -302,7 +348,7 @@ footer p{position:relative;font-weight:500}
 
 <header class="nav">
  <div class="wrap">
-  <a class="brand" href="#home"><img src="shiv-logo.jpeg" alt="Shiv Industries logo"><span><b>SHIV INDUSTRIES</b><small data-key="tagline">Premium Dairy Nutrition | Amreli, Gujarat</small></span></a>
+  <a class="brand" href="#home"><img src="shiv-logo.jpeg" alt="Shiv Industries logo"><span><b>KAILASH KAPASIYA KHOL</b><small data-key="tagline">Premium Dairy Nutrition | Amreli & Gondal, Gujarat</small></span></a>
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu"><i class="fas fa-bars"></i></button>
   <ul class="menu" id="menu">
    <li><a class="lnk" href="#home" data-key="navHome">Home</a></li>
@@ -317,7 +363,12 @@ footer p{position:relative;font-weight:500}
 </header>
 
 <main>
+<!-- HERO with sliding cow/buffalo backgrounds -->
 <section class="hero" id="home">
+ <div class="hero-bg active"></div>
+ <div class="hero-bg"></div>
+ <div class="hero-bg"></div>
+ <div class="hero-bg"></div>
  <div class="hero-box">
   <h1 data-key="heroTitle">Premium Cattle Feed for <span>Better Milk & Health</span></h1>
   <p data-key="heroSub">High Protein | Better Fat | Higher Yield</p>
@@ -329,7 +380,7 @@ footer p{position:relative;font-weight:500}
  <h2 class="title" data-key="productsTitle">🐄 Our Complete Range</h2>
  <p class="sub" data-key="productsHeroSub">Scientifically formulated for maximum milk yield and animal health</p>
  <div class="grid g4">
-  <article class="card prod rv"><div class="pimg"><img src="khol.jpeg" alt="Kailash Kapasiya Khol" loading="lazy"></div><h3 data-key="prod1Name">Kailash Kapasiya Khod</h3><span class="tag" data-key="prod1Tag"></span><p data-key="prod1Desc"></p><div class="specs"><span><i class="fas fa-weight-hanging"></i>44.500 KG</span><span><i class="fas fa-chart-line"></i>22% <b data-key="protein">Protein</b></span></div></article>
+  <article class="card prod rv"><div class="pimg"><img src="khol.jpeg" alt="Kailash Kapasiya Khol" loading="lazy"></div><h3 data-key="prod1Name">Kailash Kapasiya Khol</h3><span class="tag" data-key="prod1Tag"></span><p data-key="prod1Desc"></p><div class="specs"><span><i class="fas fa-weight-hanging"></i>44.500 KG</span><span><i class="fas fa-chart-line"></i>22% <b data-key="protein">Protein</b></span></div></article>
   <article class="card prod rv"><div class="pimg"><img src="shivdhara.jpeg" alt="Shivdhara Pashu Aahar" loading="lazy"></div><h3 data-key="prod2Name"></h3><span class="tag" data-key="prod2Tag"></span><p data-key="prod2Desc"></p><div class="specs"><span><i class="fas fa-weight-hanging"></i>35 KG</span><span><i class="fas fa-chart-line"></i>20% <b data-key="protein">Protein</b></span></div></article>
   <article class="card prod rv"><div class="pimg"><img src="balaji.jpeg" alt="Balaji Pashu Aahar" loading="lazy"></div><h3 data-key="prod3Name"></h3><span class="tag" data-key="prod3Tag"></span><p data-key="prod3Desc"></p><div class="specs"><span><i class="fas fa-weight-hanging"></i>40 KG</span><span><i class="fas fa-chart-line"></i>18% <b data-key="protein">Protein</b></span></div></article>
   <article class="card prod rv"><div class="pimg"><img src="makaybhushu.jpeg" alt="Kailash Special Feed" loading="lazy"></div><h3 data-key="prod4Name"></h3><span class="tag" data-key="prod4Tag"></span><p data-key="prod4Desc"></p><div class="specs"><span><i class="fas fa-weight-hanging"></i>30 KG</span><span><i class="fas fa-chart-line"></i>24% <b data-key="protein">Protein</b></span></div></article>
@@ -385,21 +436,23 @@ footer p{position:relative;font-weight:500}
  <h2 class="title" data-key="factoriesTitle">🏭 Our Factories</h2>
  <p class="sub" data-key="factoriesSub"></p>
  <div class="grid g2">
+  <!-- AMRELI FACTORY -->
   <article class="card fac rv">
-   <button class="shot" data-zoom="card_shiv_amreli.jpg" aria-label="View card"><img src="card_shiv_amreli.jpg" alt="Shiv Industries Amreli visiting card" loading="lazy"></button>
+   <button class="shot" data-zoom="card_shiv_amreli.jpg" aria-label="View card"><img src="card_shiv_amreli.jpg" alt="Kailash Kapasiya Khol Amreli card" loading="lazy"></button>
    <div class="body">
-    <span class="badge" data-key="fac1Badge">Head Factory</span>
-    <h3 data-key="fac1Name">Shiv Industries – Amreli</h3>
+    <span class="badge" data-key="fac1Badge">Amreli Factory</span>
+    <h3 data-key="fac1Name">Kailash Kapasiya Khol – Amreli</h3>
     <div class="row"><i class="fas fa-map-marker-alt"></i><span data-key="fac1Addr"></span></div>
-    <div class="row"><i class="fas fa-phone-alt"></i><span>Maheshbhai: <a href="tel:+919426756662">94267 56662</a><br>Kuldipbhai: <a href="tel:+919638158270">96381 58270</a><br><a href="tel:02792240041">02792-240041</a></span></div>
-    <div class="btns"><a class="btn g" href="tel:+919426756662"><i class="fas fa-phone"></i><span data-key="callBtn">Call Now</span></a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Shrinathji+Chamber+Lathi+Road+Amreli"><i class="fas fa-location-arrow"></i><span data-key="dirBtn">Directions</span></a></div>
+    <div class="row"><i class="fas fa-phone-alt"></i><span>Kuldipbhai: <a href="tel:+919638158270">96381 58270</a><br>Ajaybhai: <a href="tel:+919427745336">94277 45336</a></span></div>
+    <div class="btns"><a class="btn g" href="tel:+919638158270"><i class="fas fa-phone"></i><span data-key="callBtn">Call Now</span></a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Shrinathji+Chamber+Lathi+Road+Amreli"><i class="fas fa-location-arrow"></i><span data-key="dirBtn">Directions</span></a></div>
    </div>
   </article>
+  <!-- GONDAL FACTORY -->
   <article class="card fac rv">
-   <button class="shot" data-zoom="card_kailash_gondal.jpg" aria-label="View card"><img src="card_kailash_gondal.jpg" alt="Kailash Industries Gondal visiting card" loading="lazy"></button>
+   <button class="shot" data-zoom="card_kailash_gondal.jpg" aria-label="View card"><img src="card_kailash_gondal.jpg" alt="Kailash Kapasiya Khol Gondal card" loading="lazy"></button>
    <div class="body">
-    <span class="badge" data-key="fac2Badge">Gondal Unit</span>
-    <h3 data-key="fac2Name">Kailash Industries – Gondal</h3>
+    <span class="badge" data-key="fac2Badge">Gondal Factory</span>
+    <h3 data-key="fac2Name">Kailash Kapasiya Khol – Gondal</h3>
     <div class="row"><i class="fas fa-map-marker-alt"></i><span data-key="fac2Addr"></span></div>
     <div class="row"><i class="fas fa-phone-alt"></i><span>Maheshbhai: <a href="tel:+919426756662">94267 56662</a></span></div>
     <div class="btns"><a class="btn g" href="tel:+919426756662"><i class="fas fa-phone"></i><span data-key="callBtn">Call Now</span></a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Vraj+Industries+Anida+Road+Gundala+Gondal"><i class="fas fa-location-arrow"></i><span data-key="dirBtn">Directions</span></a></div>
@@ -418,10 +471,28 @@ footer p{position:relative;font-weight:500}
  <div class="contact">
   <div class="card info">
    <h3 data-key="contactInfoTitle" style="margin-bottom:.4rem"></h3>
-   <p data-key="contactInfoDesc" style="margin-bottom:1.2rem"></p>
-   <div class="it"><i class="fas fa-map-marker-alt"></i><div><strong data-key="addressLabel"></strong><p data-key="address"></p></div></div>
-   <div class="it"><i class="fas fa-phone-alt"></i><div><strong data-key="phoneLabel"></strong><a href="tel:02792240041">02792-240041</a><br><a href="tel:+919427745336">+91 94277 45336</a><br><a href="tel:+919638158270">+91 96381 58270</a><br><a href="tel:+919426756662">+91 94267 56662</a></div></div>
-   <div class="it"><i class="fas fa-envelope"></i><div><strong data-key="emailLabel"></strong><a href="mailto:kuldipkukadiya.kk@gmail.com">kuldipkukadiya.kk@gmail.com</a><br><a href="mailto:maheshkukadiya.mk@gmail.com">maheshkukadiya.mk@gmail.com</a></div></div>
+   <p data-key="contactInfoDesc" style="margin-bottom:1rem"></p>
+   <!-- Two location cards with direct directions -->
+   <div class="loc-grid">
+    <div class="loc-card">
+     <h4><i class="fas fa-location-dot"></i> <span data-key="locAmreli">Amreli Factory</span></h4>
+     <div class="addr" data-key="locAmreliAddr"></div>
+     <div class="nums">
+      <a href="tel:+919638158270"><i class="fas fa-phone"></i> Kuldipbhai</a>
+      <a href="tel:+919427745336"><i class="fas fa-phone"></i> Ajaybhai</a>
+     </div>
+     <a class="btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Shrinathji+Chamber+Lathi+Road+Amreli"><i class="fas fa-location-arrow"></i> <span data-key="dirBtn">Directions</span></a>
+    </div>
+    <div class="loc-card">
+     <h4><i class="fas fa-location-dot"></i> <span data-key="locGondal">Gondal Factory</span></h4>
+     <div class="addr" data-key="locGondalAddr"></div>
+     <div class="nums">
+      <a href="tel:+919426756662"><i class="fas fa-phone"></i> Maheshbhai</a>
+     </div>
+     <a class="btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Vraj+Industries+Anida+Road+Gundala+Gondal"><i class="fas fa-location-arrow"></i> <span data-key="dirBtn">Directions</span></a>
+    </div>
+   </div>
+   <div class="it" style="margin-top:1.2rem"><i class="fas fa-envelope"></i><div><strong data-key="emailLabel"></strong><a href="mailto:kuldipkukadiya.kk@gmail.com">kuldipkukadiya.kk@gmail.com</a><br><a href="mailto:maheshkukadiya.mk@gmail.com">maheshkukadiya.mk@gmail.com</a></div></div>
    <div class="it"><i class="fas fa-clock"></i><div><strong data-key="hoursLabel"></strong><p data-key="hours"></p><p data-key="sunday"></p></div></div>
    <div class="map"><iframe title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=J69V%2B4P6%2C%20Amreli%2C%20Gujarat%20365601&output=embed&z=15"></iframe></div>
   </div>
@@ -429,8 +500,8 @@ footer p{position:relative;font-weight:500}
    <h3 data-key="sendMessageTitle" style="margin-bottom:1rem"></h3>
    <form id="form" action="https://api.web3forms.com/submit" method="POST">
     <input type="hidden" name="access_key" value="b1311ffb-e2b9-4870-973f-c052bc44ba6b">
-    <input type="hidden" name="subject" value="New Contact Form Submission - Shiv Industries">
-    <input type="hidden" name="from_name" value="Shiv Industries Website">
+    <input type="hidden" name="subject" value="New Contact Form Submission - Kailash Kapasiya Khol">
+    <input type="hidden" name="from_name" value="Kailash Kapasiya Khol Website">
     <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
     <input type="text" name="name" required autocomplete="name" data-ph="namePlace" placeholder="Full Name *">
     <input type="email" name="email" required autocomplete="email" data-ph="emailPlace" placeholder="Email Address *">
@@ -456,12 +527,12 @@ footer p{position:relative;font-weight:500}
 </main>
 
 <footer>
- <p data-key="footerText">© 2026 Shiv Industries | Made with pride 🐃🌿</p>
+ <p data-key="footerText">© 2026 Kailash Kapasiya Khol | Made with pride 🐃🌿</p>
  <div class="soc"><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://wa.me/919426756662" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a></div>
  <small data-key="footerTag"></small>
 </footer>
 
-<div class="fab"><a class="wa" href="https://wa.me/919426756662" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a><a href="tel:+919426756662" aria-label="Call"><i class="fas fa-phone"></i></a><button class="top" id="top" aria-label="Top"><i class="fas fa-arrow-up"></i></button></div>
+<div class="fab"><a class="wa" href="https://wa.me/919426756662" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a><a href="tel:+919638158270" aria-label="Call"><i class="fas fa-phone"></i></a><button class="top" id="top" aria-label="Top"><i class="fas fa-arrow-up"></i></button></div>
 <div class="lb" id="lb"><button aria-label="Close">✕</button><img alt=""></div>
 
 <script>
@@ -471,7 +542,7 @@ const T = {
   heroSub: "High Protein | Better Fat | Higher Yield",
   heroBtn: "Explore Products",
   productsTitle: "🐄 Our Complete Range",
-  prod1Name: "Kailash Kapasiya Khod",
+  prod1Name: "Kailash Kapasiya Khol",
   prod1Tag: "High Protein | Better Yield",
   prod1Desc: "🏆 Rich in minerals & energy for maximum milk production. Ideal for high-yielding dairy cows.",
   prod2Name: "Shivdhara Pashu Aahar",
@@ -483,9 +554,9 @@ const T = {
   prod4Name: "Kailash Special Feed",
   prod4Tag: "30 KG | Premium Formula",
   prod4Desc: "🌟 Scientifically balanced for high-yield dairy cows with added minerals and vitamins.",
-  aboutTitle: "🌾 About Shiv Industries",
+  aboutTitle: "🌾 About Kailash Kapasiya Khol",
   storyTitle: "Our Story",
-  storyText: "Shiv Industries is a trusted name in Amreli, Gujarat, dedicated to manufacturing scientifically formulated cattle feed. We blend traditional knowledge with modern nutrition to empower dairy farmers.",
+  storyText: "Kailash Kapasiya Khol is a trusted name in Amreli & Gondal, Gujarat, dedicated to manufacturing scientifically formulated cattle feed. We blend traditional knowledge with modern nutrition to empower dairy farmers.",
   visionTitle: "Our Vision",
   visionText: "To be India's most reliable cattle feed brand, driving dairy prosperity through high-quality nutrition and farmer-first innovation.",
   missionTitle: "Our Mission",
@@ -494,11 +565,11 @@ const T = {
   counter2: "+ Orders Delivered",
   counter3: "+ Years of Excellence",
   counter4: "Tonnes Supplied",
-  footerText: "© 2026 Shiv Industries | Made with pride 🐃🌿",
+  footerText: "© 2026 Kailash Kapasiya Khol | Made with pride 🐃🌿",
   footerTag: "Trusted by farmers for high-protein feed & better milk yield",
   readMoreBtn: "Read More",
   aboutHeroTitle: "Fueling India's Dairy Prosperity",
-  aboutHeroText: "Since 2012, Shiv Industries has been the trusted partner for thousands of dairy farmers across Gujarat.",
+  aboutHeroText: "Since 2012, Kailash Kapasiya Khol has been the trusted partner for thousands of dairy farmers across Gujarat.",
   valuesTitle: "💎 Our Core Values",
   leadershipTitle: "🤝 Our Leadership Team",
   role1: "Customer Relations & Business Growth",
@@ -560,7 +631,7 @@ const T = {
   faq3A: "We're always looking for reliable distributors. Please contact our team with your details and we'll get back to you.",
   faq4Q: "What payment methods do you accept?",
   faq4A: "We accept cash, bank transfer, UPI, and all major credit/debit cards for online payments.",
-  tagline: "Premium Dairy Nutrition | Amreli, Gujarat",
+  tagline: "Premium Dairy Nutrition | Amreli & Gondal, Gujarat",
   navHome: "Home",
   navProducts: "Products",
   navAbout: "About",
@@ -569,12 +640,16 @@ const T = {
   protein: "Protein",
   factoriesTitle: "🏭 Our Factories",
   factoriesSub: "Visit us at either of our two units in Gujarat – tap a card to enlarge it.",
-  fac1Badge: "Head Factory",
-  fac1Name: "Shiv Industries – Amreli",
+  fac1Badge: "Amreli Factory",
+  fac1Name: "Kailash Kapasiya Khol – Amreli",
   fac1Addr: "Next to Shrinathji Chamber, Lathi Road, Amreli, Gujarat",
-  fac2Badge: "Gondal Unit",
-  fac2Name: "Kailash Industries – Gondal",
+  fac2Badge: "Gondal Factory",
+  fac2Name: "Kailash Kapasiya Khol – Gondal",
   fac2Addr: "Plot No. 32, Vraj Industries-1, Anida Road, Gundala, Gondal, Gujarat",
+  locAmreli: "Amreli Factory",
+  locAmreliAddr: "Next to Shrinathji Chamber, Lathi Road, Amreli, Gujarat",
+  locGondal: "Gondal Factory",
+  locGondalAddr: "Plot No. 32, Vraj Industries-1, Anida Road, Gundala, Gondal, Gujarat",
   callBtn: "Call Now",
   dirBtn: "Directions",
   formOk: "✅ Thank you! Your message has been sent. We'll contact you within 24 hours. 🐄",
@@ -586,7 +661,7 @@ const T = {
   heroSub: "उच्च प्रोटीन | बेहतर फैट | अधिक उत्पादन",
   heroBtn: "उत्पाद देखें",
   productsTitle: "🐄 हमारी संपूर्ण श्रृंखला",
-  prod1Name: "कैलाश कपासिया खोद",
+  prod1Name: "कैलाश कपासिया खोल",
   prod1Tag: "उच्च प्रोटीन | बेहतर उत्पादन",
   prod1Desc: "🏆 खनिज और ऊर्जा से भरपूर, उच्च उपज देने वाली डेयरी गायों के लिए आदर्श।",
   prod2Name: "शिवधारा पशु आहार",
@@ -598,9 +673,9 @@ const T = {
   prod4Name: "कैलाश स्पेशल फीड",
   prod4Tag: "30 किलो | प्रीमियम फॉर्मूला",
   prod4Desc: "🌟 अतिरिक्त खनिज और विटामिन के साथ उच्च उपज देने वाली डेयरी गायों के लिए वैज्ञानिक रूप से संतुलित।",
-  aboutTitle: "🌾 शिव इंडस्ट्रीज के बारे में",
+  aboutTitle: "🌾 कैलाश कपासिया खोल के बारे में",
   storyTitle: "हमारी कहानी",
-  storyText: "शिव इंडस्ट्रीज अमरेली, गुजरात में एक विश्वसनीय नाम है, जो वैज्ञानिक रूप से तैयार पशु आहार के निर्माण के लिए समर्पित है।",
+  storyText: "कैलाश कपासिया खोल अमरेली और गोंडल, गुजरात में एक विश्वसनीय नाम है, जो वैज्ञानिक रूप से तैयार पशु आहार के निर्माण के लिए समर्पित है।",
   visionTitle: "हमारा दृष्टिकोण",
   visionText: "भारत का सबसे भरोसेमंद पशु आहार ब्रांड बनना।",
   missionTitle: "हमारा मिशन",
@@ -609,11 +684,11 @@ const T = {
   counter2: "+ ऑर्डर वितरित",
   counter3: "+ वर्षों का अनुभव",
   counter4: "टन आपूर्ति",
-  footerText: "© 2026 शिव इंडस्ट्रीज | गर्व से बनाया 🐃🌿",
+  footerText: "© 2026 कैलाश कपासिया खोल | गर्व से बनाया 🐃🌿",
   footerTag: "उच्च प्रोटीन फीड और बेहतर दूध उत्पादन के लिए किसानों द्वारा भरोसेमंद",
   readMoreBtn: "और पढ़ें",
   aboutHeroTitle: "भारत की डेयरी समृद्धि को बढ़ावा",
-  aboutHeroText: "2012 से, शिव इंडस्ट्रीज गुजरात के हजारों डेयरी किसानों के लिए विश्वसनीय भागीदार है।",
+  aboutHeroText: "2012 से, कैलाश कपासिया खोल गुजरात के हजारों डेयरी किसानों के लिए विश्वसनीय भागीदार है।",
   valuesTitle: "💎 हमारे मूल्य",
   leadershipTitle: "🤝 हमारी टीम",
   role1: "ग्राहक संबंध और व्यवसाय विकास",
@@ -675,7 +750,7 @@ const T = {
   faq3A: "हम हमेशा विश्वसनीय वितरकों की तलाश में रहते हैं।",
   faq4Q: "आप कौन से भुगतान विधियाँ स्वीकार करते हैं?",
   faq4A: "हम नकद, बैंक हस्तांतरण, यूपीआई और सभी प्रमुख क्रेडिट/डेबिट कार्ड स्वीकार करते हैं।",
-  tagline: "प्रीमियम डेयरी पोषण | अमरेली, गुजरात",
+  tagline: "प्रीमियम डेयरी पोषण | अमरेली और गोंडल, गुजरात",
   navHome: "होम",
   navProducts: "उत्पाद",
   navAbout: "हमारे बारे में",
@@ -684,12 +759,16 @@ const T = {
   protein: "प्रोटीन",
   factoriesTitle: "🏭 हमारी फैक्ट्री",
   factoriesSub: "गुजरात में हमारी दोनों यूनिट पर पधारें – बड़ा देखने के लिए कार्ड पर टैप करें।",
-  fac1Badge: "मुख्य फैक्ट्री",
-  fac1Name: "शिव इंडस्ट्रीज – अमरेली",
+  fac1Badge: "अमरेली फैक्ट्री",
+  fac1Name: "कैलाश कपासिया खोल – अमरेली",
   fac1Addr: "श्रीनाथजी चेम्बर के बगल में, लाठी रोड, अमरेली, गुजरात",
-  fac2Badge: "गोंडल यूनिट",
-  fac2Name: "कैलाश इंडस्ट्रीज – गोंडल",
+  fac2Badge: "गोंडल फैक्ट्री",
+  fac2Name: "कैलाश कपासिया खोल – गोंडल",
   fac2Addr: "प्लॉट नं. 32, वज्र इंडस्ट्रीज-1, अनीडा रोड, गुंदाला, गोंडल, गुजरात",
+  locAmreli: "अमरेली फैक्ट्री",
+  locAmreliAddr: "श्रीनाथजी चेम्बर के बगल में, लाठी रोड, अमरेली, गुजरात",
+  locGondal: "गोंडल फैक्ट्री",
+  locGondalAddr: "प्लॉट नं. 32, वज्र इंडस्ट्रीज-1, अनीडा रोड, गुंदाला, गोंडल, गुजरात",
   callBtn: "अभी कॉल करें",
   dirBtn: "रास्ता देखें",
   formOk: "✅ धन्यवाद! आपका संदेश भेज दिया गया है। हम 24 घंटे में संपर्क करेंगे। 🐄",
@@ -701,7 +780,7 @@ const T = {
   heroSub: "ઉચ્ચ પ્રોટીન | વધુ ફેટ | વધુ ઉત્પાદન",
   heroBtn: "ઉત્પાદનો જુઓ",
   productsTitle: "🐄 અમારી સંપૂર્ણ શ્રેણી",
-  prod1Name: "કૈલાશ કપાસિયા ખોદ",
+  prod1Name: "કૈલાશ કપાસિયા ખોળ",
   prod1Tag: "ઉચ્ચ પ્રોટીન | વધુ ઉત્પાદન",
   prod1Desc: "🏆 ખનિજો અને ઊર્જાથી ભરપૂર, વધુ દૂધ આપતી ગાયો માટે આદર્શ।",
   prod2Name: "શિવધારા પશુ આહાર",
@@ -713,9 +792,9 @@ const T = {
   prod4Name: "કૈલાશ સ્પેશિયલ ફીડ",
   prod4Tag: "30 કિગ્રા | પ્રીમિયમ ફોર્મ્યુલા",
   prod4Desc: "🌟 વધારાના ખનિજો અને વિટામિન્સ સાથે વધુ દૂધ આપતી ગાયો માટે વૈજ્ઞાનિક રીતે સંતુલિત।",
-  aboutTitle: "🌾 શિવ ઇન્ડસ્ટ્રીઝ વિશે",
+  aboutTitle: "🌾 કૈલાશ કપાસિયા ખોળ વિશે",
   storyTitle: "અમારી વાર્તા",
-  storyText: "શિવ ઇન્ડસ્ટ્રીઝ અમરેલી, ગુજરાતમાં એક વિશ્વસનીય નામ છે, જે વૈજ્ઞાનિક રીતે ઘડવામાં આવેલ પશુ આહારના ઉત્પાદન માટે સમર્પિત છે.",
+  storyText: "કૈલાશ કપાસિયા ખોળ અમરેલી અને ગોંડલ, ગુજરાતમાં એક વિશ્વસનીય નામ છે, જે વૈજ્ઞાનિક રીતે ઘડવામાં આવેલ પશુ આહારના ઉત્પાદન માટે સમર્પિત છે.",
   visionTitle: "અમારું દ્રષ્ટિકોણ",
   visionText: "ભારતની સૌથી વિશ્વસનીય પશુ આહાર બ્રાન્ડ બનવું.",
   missionTitle: "અમારું મિશન",
@@ -724,11 +803,11 @@ const T = {
   counter2: "+ ઓર્ડર ડિલિવર",
   counter3: "+ વર્ષનો અનુભવ",
   counter4: "ટન સપ્લાય",
-  footerText: "© 2026 શિવ ઇન્ડસ્ટ્રીઝ | ગર્વથી બનાવ્યું 🐃🌿",
+  footerText: "© 2026 કૈલાશ કપાસિયા ખોળ | ગર્વથી બનાવ્યું 🐃🌿",
   footerTag: "ઉચ્ચ પ્રોટીન ફીડ અને વધુ દૂધ ઉત્પાદન માટે ખેડૂતો દ્વારા વિશ્વસનીય",
   readMoreBtn: "વધુ વાંચો",
   aboutHeroTitle: "ભારતની ડેરી સમૃદ્ધિને વેગ આપીએ છીએ",
-  aboutHeroText: "2012 થી, શિવ ઇન્ડસ્ટ્રીઝ ગુજરાતના હજારો ડેરી ખેડૂતો માટે વિશ્વસનીય ભાગીદાર છે.",
+  aboutHeroText: "2012 થી, કૈલાશ કપાસિયા ખોળ ગુજરાતના હજારો ડેરી ખેડૂતો માટે વિશ્વસનીય ભાગીદાર છે.",
   valuesTitle: "💎 અમારા મૂલ્યો",
   leadershipTitle: "🤝 અમારી ટીમ",
   role1: "ગ્રાહક સંબંધ અને વ્યવસાય વિકાસ",
@@ -790,7 +869,7 @@ const T = {
   faq3A: "અમે હંમેશા વિશ્વસનીય વિતરકોની શોધમાં રહીએ છીએ.",
   faq4Q: "તમે કઈ ચુકવણી પદ્ધતિઓ સ્વીકારો છો?",
   faq4A: "અમે રોકડ, બેંક ટ્રાન્સફર, યુપીઆઈ અને બધા મુખ્ય ક્રેડિટ/ડેબિટ કાર્ડ સ્વીકારીએ છીએ.",
-  tagline: "પ્રીમિયમ ડેરી પોષણ | અમરેલી, ગુજરાત",
+  tagline: "પ્રીમિયમ ડેરી પોષણ | અમરેલી અને ગોંડલ, ગુજરાત",
   navHome: "હોમ",
   navProducts: "ઉત્પાદનો",
   navAbout: "અમારા વિશે",
@@ -799,12 +878,16 @@ const T = {
   protein: "પ્રોટીન",
   factoriesTitle: "🏭 અમારી ફેક્ટરી",
   factoriesSub: "ગુજરાતમાં અમારા બંને યુનિટની મુલાકાત લો – મોટું જોવા કાર્ડ પર ટેપ કરો.",
-  fac1Badge: "મુખ્ય ફેક્ટરી",
-  fac1Name: "શિવ ઇન્ડસ્ટ્રીઝ – અમરેલી",
+  fac1Badge: "અમરેલી ફેક્ટરી",
+  fac1Name: "કૈલાશ કપાસિયા ખોળ – અમરેલી",
   fac1Addr: "શ્રીનાથજી ચેમ્બર બાજુમાં, લાઠી રોડ, અમરેલી, ગુજરાત",
-  fac2Badge: "ગોંડલ યુનિટ",
-  fac2Name: "કૈલાશ ઇન્ડસ્ટ્રીઝ – ગોંડલ",
+  fac2Badge: "ગોંડલ ફેક્ટરી",
+  fac2Name: "કૈલાશ કપાસિયા ખોળ – ગોંડલ",
   fac2Addr: "પ્લોટ નં. ૩૨, વજ ઇન્ડસ્ટ્રીઝ-૧, અનીડા રોડ, ગુંદાળા, ગોંડલ, ગુજરાત",
+  locAmreli: "અમરેલી ફેક્ટરી",
+  locAmreliAddr: "શ્રીનાથજી ચેમ્બર બાજુમાં, લાઠી રોડ, અમરેલી, ગુજરાત",
+  locGondal: "ગોંડલ ફેક્ટરી",
+  locGondalAddr: "પ્લોટ નં. ૩૨, વજ ઇન્ડસ્ટ્રીઝ-૧, અનીડા રોડ, ગુંદાળા, ગોંડલ, ગુજરાત",
   callBtn: "હમણાં કૉલ કરો",
   dirBtn: "રસ્તો જુઓ",
   formOk: "✅ આભાર! તમારો સંદેશ મોકલાઈ ગયો છે. અમે 24 કલાકમાં સંપર્ક કરીશું. 🐄",
@@ -868,6 +951,16 @@ addEventListener('scroll', onScroll, { passive: true });
 onScroll();
 $('#top').onclick = () => scrollTo({ top: 0 });
 
+// Hero background slider
+let heroIdx = 0;
+const heroBgs = $$('.hero-bg');
+function nextHero(){
+  heroBgs[heroIdx].classList.remove('active');
+  heroIdx = (heroIdx + 1) % heroBgs.length;
+  heroBgs[heroIdx].classList.add('active');
+}
+setInterval(nextHero, 5000);
+
 // reveal + counters
 const io = new IntersectionObserver(es => es.forEach(e => {
   if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
@@ -922,4 +1015,4 @@ form.addEventListener('submit', async e => {
 });
 </script>
 </body>
-  </html>
+</html>
